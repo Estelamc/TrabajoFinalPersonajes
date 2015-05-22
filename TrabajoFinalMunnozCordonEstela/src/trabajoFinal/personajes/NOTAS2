@@ -1,0 +1,37 @@
+BUSCANCO OTRAS SOLUCIONES PARA AÑADIR
+
+
+	for(Empleado empleadoC : empleados){
+		if(empleadoC.getClass() == Empleado.class) // Compara si son del mismo tipo de objeto exacto
+			System.out.println("Soy " + empleadoC.getNombre());
+	}
+	
+-----------------------------------------------------------------------------------
+
+/*public void annadir(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
+			int altura, int peso, Region region, String descripcion, Raza raza) 
+					throws ApellidoNoValidoException, NombreNoValidoException, RegionNoValidaException, 
+					SexoNoValidoException, AlturaNoValidaException, PesoNoValidoException, 
+					ZodiacoNoValidoException, EdadNoValidaException, RazaNoValidaException {
+				
+		Personaje personajeGenerico= new Personaje(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
+		
+		if(personajeGenerico.getClass() == Mago.class)
+			personajeGenerico = new Mago(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, raza, descripcion);
+		else if(personajeGenerico.getClass() == Arquero.class)
+			personajeGenerico = new Arquero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, raza, descripcion);
+		else if(personajeGenerico.getClass() == Guerrero.class)
+			personajeGenerico = new Guerrero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, raza, descripcion);
+		else if(personajeGenerico.getClass() == Dragon.class)
+			personajeGenerico = new Dragon(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
+		else if(personajeGenerico.getClass() == Dios.class)
+			personajeGenerico = new Dios(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
+		
+	}*/
+	
+	public void annadir(int opcion,) {
+		switch(opcion){
+		case 1:
+			annadirArquero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, raza, descripcion);
+		}
+	}
