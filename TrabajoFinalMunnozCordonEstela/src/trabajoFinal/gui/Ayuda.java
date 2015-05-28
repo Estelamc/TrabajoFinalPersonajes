@@ -133,19 +133,6 @@ public class Ayuda extends JDialog {
 
 	
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
-	
-	/**
-	 * Carga la aplicaci&oacute;n.
-	 */
-	public static void main(String[] args) {
-		try {
-			Ayuda dialog = new Ayuda();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Crea el di&aacute;logo.

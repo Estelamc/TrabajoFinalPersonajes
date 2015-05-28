@@ -71,7 +71,7 @@ public class Guerrero extends Personaje implements Razable, Guerreable {
 	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
 	public Guerrero(String nombre, String apellido, Sexo sexo,
-			Zodiaco zodiaco, int edad, float altura, float peso, Region region, Raza raza, String descripcion)
+			Zodiaco zodiaco, int edad, double altura, double peso, Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,

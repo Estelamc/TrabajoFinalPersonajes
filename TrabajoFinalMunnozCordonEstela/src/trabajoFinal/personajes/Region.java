@@ -1,7 +1,7 @@
 package trabajoFinal.personajes;
 
 /**
- * Regiones disponibles para un reino.
+ * Regiones disponibles en donde puede vivir un personaje.
  *
  * @author Estela Mu&ntilde;oz Cord&oacute;n
  * @version 1.0
@@ -10,10 +10,6 @@ package trabajoFinal.personajes;
 
 public enum Region {
 	
-	/**
-	 * Dentro del mar (una sirena, por ejemplo).
-	 */
-	MAR,
 	/**
 	 * Zona costera (bah&iacute;a o playa).
 	 */

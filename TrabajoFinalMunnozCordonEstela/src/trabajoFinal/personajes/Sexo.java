@@ -12,9 +12,9 @@ public enum Sexo {
 	/**
 	 * Sexo femenino.
 	 */
-	FEMENINO,
+	MUJER,
 	/**
 	 * Sexo masculino.
 	 */
-	MASCULINO;
+	HOMBRE;
 }

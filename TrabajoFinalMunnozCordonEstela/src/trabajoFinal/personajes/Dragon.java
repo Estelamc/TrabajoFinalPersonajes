@@ -71,7 +71,7 @@ public class Dragon extends Personaje {
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
 	public Dragon(String nombre, String apellido, Sexo sexo,
-			Zodiaco zodiaco, int edad, float altura, float peso, Region region, String descripcion)
+			Zodiaco zodiaco, int edad, double altura, double peso, Region region, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,

@@ -93,19 +93,6 @@ public class AcercaDe extends JDialog {
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
 	
 	/**
-	 * Carga la aplicaci&oacute;n.
-	 */
-	public static void main(String[] args) {
-		try {
-			AcercaDe dialog = new AcercaDe();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Crea el di&aacute;logo.
 	 */
 	public AcercaDe() {
