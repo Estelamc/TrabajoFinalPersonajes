@@ -218,20 +218,6 @@ public class VentanaPadre extends JDialog {
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
 	
 	/**
-	 * Carga la aplicaci&oacute;n.
-	 */
-	public static void main(String[] args) {
-		try {
-			// Se crea el Diálogo de Alta
-			VentanaPadre dialog = new VentanaPadre();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Crea el di&aacute;logo.
 	 */
 	public VentanaPadre() {

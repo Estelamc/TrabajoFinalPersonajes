@@ -79,7 +79,7 @@ public class Dios extends Personaje {
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
 	public Dios(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco,
-			int edad, float altura, float peso, Region region, String descripcion)
+			int edad, double altura, double peso, Region region, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,

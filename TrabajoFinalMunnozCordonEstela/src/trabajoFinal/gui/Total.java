@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
 /**
- * Calcula la cantidad de coches que hay en el concesionario.
+ * Calcula la cantidad de personajes que hay en el listado.
  * 
  * @author Estela Mu&ntilde;oz Cord&oacute;n
  * @version 1.0
@@ -48,37 +48,24 @@ public class Total extends JDialog {
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
 	
 	/**
-	 * Carga la aplicaci&oacute;n.
-	 */
-	public static void main(String[] args) {
-		try {
-			Total dialog = new Total();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 *Crea el di&aacute;logo.
 	 */
 	public Total() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Total.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
 		setResizable(false);
-		setModal(true);
-		int cantidadCoches = General.personajes.cantidadPersonajes();
-		
+		setModal(true);		
 		setTitle("Total");
 		setBounds(100, 100, 309, 168);
+		
 		getContentPane().setLayout(new BorderLayout());
 		panelContenedor.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(panelContenedor, BorderLayout.CENTER);
 		panelContenedor.setLayout(null);
+		
 		totalPanelTexto.setBounds(81, 39, 140, 39);
 		totalPanelTexto.setBackground(null); // fondo transparente
 		totalPanelTexto.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		totalPanelTexto.setText("Hay " +cantidadCoches+ " personajes.");
+		totalPanelTexto.setText("Hay " + General.personajes.cantidadPersonajes() + " personajes.");
 		panelContenedor.add(totalPanelTexto);
 		{
 			botonOK.setBounds(118, 92, 61, 29);

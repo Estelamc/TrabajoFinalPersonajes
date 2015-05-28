@@ -1,7 +1,6 @@
 package trabajoFinal.gui;
 
 import java.awt.EventQueue;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -11,23 +10,19 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.IOException;
-
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.KeyStroke;
-
 import trabajoFinal.personajes.Fichero;
 import trabajoFinal.personajes.FicheroCorruptoException;
 import trabajoFinal.personajes.General;
 import trabajoFinal.personajes.Gestion;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
 import java.awt.Toolkit;
@@ -167,16 +162,6 @@ public class Principal {
 	private JMenu menuMago = new JMenu("Mago");
 	
 	/**
-	 * Submen&uacute; A&ntilde;adir mago.
-	 */
-	private JMenuItem menuAnnadirM = new JMenuItem("A\u00F1adir");
-	
-	/**
-	 * Submen&uacute; Eliminar mago.
-	 */
-	private JMenuItem menuEliminarM = new JMenuItem("Eliminar");
-	
-	/**
 	 * Men&uacute; Buscar magos.
 	 */
 	private final JMenu menuBuscarM = new JMenu("Buscar");
@@ -223,16 +208,6 @@ public class Principal {
 	 * Men&uacute; Arquero.
 	 */
 	private JMenu menuArquero = new JMenu("Arquero");	
-	
-	/**
-	 * Men&uacute; para a&ntilde;adir un arquero.
-	 */
-	private JMenuItem menuAnnadirA = new JMenuItem("A\u00F1adir");	
-	
-	/**
-	 * Men&uacute; para eliminar un arquero.
-	 */
-	private JMenuItem menuEliminarA = new JMenuItem("Eliminar");	
 	
 	/**
 	 * Men&uacute; para buscar arqueros.
@@ -283,16 +258,6 @@ public class Principal {
 	private final JMenu menuGuerrero = new JMenu("Guerrero");
 	
 	/**
-	 * Men&uacute; para a&ntilde;adir un guerrero.
-	 */
-	private final JMenuItem menuAnnadirG = new JMenuItem("A\u00F1adir");
-	
-	/**
-	 * Men&uacute; para eliminar un guerrero.
-	 */
-	private final JMenuItem menuEliminarG = new JMenuItem("Eliminar");
-	
-	/**
 	 * Men&uacute; para buscar guerreros.
 	 */
 	private final JMenu menuBuscarG = new JMenu("Buscar");
@@ -341,16 +306,6 @@ public class Principal {
 	private final JMenu menuDragon = new JMenu("Drag\u00F3n");
 	
 	/**
-	 * Men&uacute; para a&ntilde;adir un drag&oacute;n.
-	 */
-	private final JMenuItem menuAnnadirD = new JMenuItem("A\u00F1adir");
-	
-	/**
-	 * Men&uacute; para eliminar un drag&oacute;n.
-	 */
-	private final JMenuItem menuEliminarD = new JMenuItem("Eliminar");
-	
-	/**
 	 * Men&uacute; para buscar dragones.
 	 */
 	private final JMenu menuBuscarD = new JMenu("Buscar");
@@ -384,59 +339,6 @@ public class Principal {
 	 * Men&uacute; para ver el total de dragones.
 	 */
 	private final JMenuItem menuTotalD = new JMenuItem("Total de dragones");
-	
-	
-	// ----------------------------------- Dios ---- \\
-	
-	/**
-	 * Men&uacute; Dios.
-	 */
-	private final JMenu menuDios = new JMenu("Dios");
-	
-	/**
-	 * Men&uacute; para a&ntilde;adir un dios.
-	 */
-	private final JMenuItem menuAnnadirDi = new JMenuItem("A\u00F1adir");
-	
-	/**
-	 * Men&uacute; para eliminar un dios.
-	 */
-	private final JMenuItem menuEliminarDi = new JMenuItem("Eliminar");
-	
-	/**
-	 * Men&uacute; para a&ntilde;adir un dios.
-	 */
-	private final JMenu menuBuscarDi = new JMenu("Buscar");
-	
-	/**
-	 * Men&uacute; para buscar un dios por su nombre.
-	 */
-	private final JMenuItem menuNombreDi = new JMenuItem("Buscar por el nombre");
-	
-	/**
-	 * Men&uacute; para buscar dioses por el sexo.
-	 */
-	private final JMenuItem menuSexoDi = new JMenuItem("Buscar por el sexo");
-	
-	/**
-	 * Men&uacute; para buscar dioses por la regi&oacute;n.
-	 */
-	private final JMenuItem menuRegionDi = new JMenuItem("Buscar por la regi\u00F3n");
-	
-	/**
-	 * Men&uacute; para buscar dioses por el signo del zodiaco.
-	 */
-	private final JMenuItem menuZodiacoDi = new JMenuItem("Buscar por el zodiaco");
-	
-	/**
-	 * Men&uacute; para mostrar los dioses existentes.
-	 */
-	private final JMenuItem menuMostrarDi = new JMenuItem("Mostrar dioses");
-	
-	/**
-	 * Men&uacute; para ver el total de dioses.
-	 */
-	private final JMenuItem menuTotalDi = new JMenuItem("Total de dioses");
 	
 	
 	// ----------------------------------- Ayuda ---- \\
@@ -476,13 +378,7 @@ public class Principal {
 	 */
 	private JLabel imagen = new JLabel("", new ImageIcon(Principal.class.getResource(
 			"/trabajoFinal/gui/imagenes/Groups_Icon_256.png")), JLabel.CENTER);
-	
-	/**
-	 * Ventana con la funci&oacute;n de a&ntilde;adir un personaje.
-	 */
-	private Annadir annadir = new Annadir();
-	
-	
+			
 		
 	// ------------------------------------------------------------------------------------------ \\
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
@@ -633,7 +529,7 @@ public class Principal {
 		
 		menuAnnadirP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
 		menuPersonaje.add(menuAnnadirP);
-		
+				
 		menuEliminarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
 		menuPersonaje.add(menuEliminarP);
 		
@@ -654,7 +550,7 @@ public class Principal {
 		
 		menuRazaP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
 		menuBuscarP.add(menuRazaP);
-		
+				
 		menuMostrarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
 		menuPersonaje.add(menuMostrarP);
 				
@@ -667,28 +563,71 @@ public class Principal {
 		
 		// ---- Añadir Acciones ---- \\
 		
-		menuAnnadirP.addActionListener(new ActionListener() {
+		menuAnnadirP.addActionListener(new ActionListener() { // AÑADIR PERSONAJE
 			public void actionPerformed(ActionEvent e) {
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource("/trabajoFinal/gui/imagenes/Misc_User_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Personaje");
+				Annadir annadir = new Annadir();
 				annadir.setVisible(true);
 			}
 		});
 		
-		menuTotalP.addActionListener(new ActionListener() {
+		menuTotalP.addActionListener(new ActionListener() { // MOSTRAR TOTAL PERSONAJES
 			public void actionPerformed(ActionEvent arg0) {
-				Total total = new Total();
-				total.setVisible(true);
+				if(General.personajes.cantidadPersonajes() != 0){
+					Total total = new Total();
+					total.setVisible(true);
+				}
+				else
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay personajes que contabilizar. "
+							+ "\nAñade personajes para poder ver cuántos hay.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
 			}
 		});
 		
-		menuNombreP.addActionListener(new ActionListener() {
+		menuMostrarP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BuscarPorNombre buscar = new BuscarPorNombre();
-				buscar.setVisible(true);
+				if(General.personajes.cantidadPersonajes() != 0){
+					/*Mostrar mostrar = new Mostrar();
+					mostrar.setVisible(true);*/
+				}
+				else
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay personajes que contabilizar. "
+							+ "\nAñade personajes para poder ver cuántos hay.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
 			}
 		});
 		
+		menuNombreP.addActionListener(new ActionListener() { // BUSCAR PESONAJE POR NOMBRE
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0){
+					BuscarPorNombre buscar = new BuscarPorNombre();
+					buscar.setVisible(true);
+				}
+				else
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay personajes que buscar. "
+							+ "\nAñade personajes para poder buscarlos.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		menuEliminarP.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { // ELIMINAR PERSONAJE
+				
+				if(General.personajes.cantidadPersonajes() != 0){
+					Eliminar eliminar = new Eliminar();
+					eliminar.setVisible(true);
+				}
+				else
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay personajes que eliminar. "
+							+ "\nAñade personajes para poder eliminarlos.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+				
 		// ----------------------------------- Menú Mago ----------------------------------- \\
 		
 		// ---- Añadir Menús ---- \\
@@ -696,12 +635,6 @@ public class Principal {
 		menuBarra.add(menuMago);
 		menuMago.setFont(new Font("Candara", Font.BOLD, 14));
 		menuMago.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
-		
-		menuAnnadirM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));		
-		menuMago.add(menuAnnadirM);
-		
-		menuEliminarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuMago.add(menuEliminarM);
 		
 		menuBuscarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuMago.add(menuBuscarM);
@@ -730,40 +663,12 @@ public class Principal {
 		// ---- Añadir Teclas de Acceso Rápido ---- \\
 		
 		menuMago.setMnemonic('M');
-		menuAnnadirM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
-		menuEliminarM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_MASK));
 		menuNombreM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
 		menuSexoM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
 		menuRegionM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_MASK));	
 		menuZodiacoM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK));
 		menuMostrarM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK));
 		menuTotalM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
-		
-		// ---- Añadir Acciones ---- \\		
-		
-		menuAnnadirM.addActionListener(new ActionListener() { // Abre la ventana de Alta
-			public void actionPerformed(ActionEvent e) {
-				inhabilitarRadioButton();
-				annadir.magoRB.setSelected(true);
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource(
-						"/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Mago");
-				annadir.setVisible(true);
-				
-			}
-		});
-		
-		menuEliminarM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { // Abre la ventana de eliminar
-				if(General.personajes.cantidadPersonajes() != 0) {
-					
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"El listado está vacío. \nAñade personajes para poder eliminarlos.",
-							"Listado vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
 		
 		menuSexoM.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { 
@@ -822,12 +727,6 @@ public class Principal {
 		menuArquero.setFont(new Font("Candara", Font.BOLD, 14));
 		menuArquero.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
 		menuBarra.add(menuArquero);
-				
-		menuAnnadirA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		menuArquero.add(menuAnnadirA);
-		
-		menuEliminarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuArquero.add(menuEliminarA);
 		
 		menuBuscarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuArquero.add(menuBuscarA);
@@ -857,19 +756,6 @@ public class Principal {
 		// ---- Añadir Teclas de Acceso Rápido ---- \\
 		
 		menuArquero.setMnemonic('A');
-		
-		// ---- Añadir Acciones ---- \\
-		
-		menuAnnadirA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				inhabilitarRadioButton();
-				annadir.arqueroRB.setSelected(true);
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource(
-						"/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Arquero");
-				annadir.setVisible(true);							
-			}
-		});
 				
 		// ----------------------------------- Menú Guerrero ----------------------------------- \\
 		
@@ -878,12 +764,6 @@ public class Principal {
 		menuGuerrero.setFont(new Font("Candara", Font.BOLD, 14));
 		menuGuerrero.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
 		menuBarra.add(menuGuerrero);
-		
-		menuAnnadirG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		menuGuerrero.add(menuAnnadirG);
-		
-		menuEliminarG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuGuerrero.add(menuEliminarG);
 		
 		menuBuscarG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuGuerrero.add(menuBuscarG);
@@ -913,19 +793,6 @@ public class Principal {
 				
 		menuGuerrero.setMnemonic('G');
 		
-		// ---- Añadir Acciones ---- \\
-		
-		menuAnnadirG.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				inhabilitarRadioButton();
-				annadir.guerreroRB.setSelected(true);
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource(
-						"/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Guerrero");
-				annadir.setVisible(true);
-			}
-		});
-		
 		// ----------------------------------- Menú Dragón ----------------------------------- \\
 		
 		// ---- Añadir Menús ---- \\
@@ -933,12 +800,6 @@ public class Principal {
 		menuDragon.setFont(new Font("Candara", Font.BOLD, 14));
 		menuDragon.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
 		menuBarra.add(menuDragon);
-		
-		menuAnnadirD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		menuDragon.add(menuAnnadirD);
-		
-		menuEliminarD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuDragon.add(menuEliminarD);
 		
 		menuBuscarD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuDragon.add(menuBuscarD);
@@ -964,71 +825,6 @@ public class Principal {
 		// ---- Añadir Teclas de Acceso Rápido ---- \\
 		
 		menuDragon.setMnemonic('D');
-		
-		// ---- Añadir Acciones ---- \\
-		
-		menuAnnadirD.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				inhabilitarRadioButton();
-				annadir.dragonRB.setSelected(true);
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource(
-						"/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Dragón");
-				annadir.setVisible(true);
-			}
-		});
-		
-		// ----------------------------------- Menú Dios ----------------------------------- \\
-		
-		// ---- Añadir Menús ---- \\
-		
-		menuDios.setFont(new Font("Candara", Font.BOLD, 14));
-		menuDios.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Priest_1_Icon_16.png")));
-		menuBarra.add(menuDios);
-		
-		menuAnnadirDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		menuDios.add(menuAnnadirDi);
-		
-		menuEliminarDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuDios.add(menuEliminarDi);
-		
-		menuBuscarDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
-		menuDios.add(menuBuscarDi);
-		
-		menuNombreDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-		menuBuscarDi.add(menuNombreDi);
-		
-		menuSexoDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		menuBuscarDi.add(menuSexoDi);
-		
-		menuRegionDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarDi.add(menuRegionDi);
-		
-		menuZodiacoDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarDi.add(menuZodiacoDi);
-		
-		menuMostrarDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuDios.add(menuMostrarDi);
-		
-		menuTotalDi.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuDios.add(menuTotalDi);
-		
-		// ---- Añadir Teclas de Acceso Rápido ---- \\
-		
-		menuDios.setMnemonic('I');
-		
-		// ---- Añadir Acciones ---- \\
-		
-		menuAnnadirDi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				inhabilitarRadioButton();
-				annadir.diosRB.setSelected(true);
-				annadir.setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource(
-						"/trabajoFinal/gui/imagenes/Runes_of_Magic_Priest_1_Icon_16.png")));
-				annadir.setTitle("A\u00F1adir Dios");
-				annadir.setVisible(true);
-			}
-		});
 		
 		
 		// ----------------------------------- Menú Ayuda ----------------------------------- \\
@@ -1153,16 +949,4 @@ public class Principal {
 		}
 	}
 	
-	/**
-	 * Inhabilidar los botones de tipo para luego irlos 
-	 * habilitando seg&uacute;n interesen.
-	 */
-	private void inhabilitarRadioButton(){
-		annadir.magoRB.setEnabled(false);
-		annadir.arqueroRB.setEnabled(false);
-		annadir.guerreroRB.setEnabled(false);
-		annadir.dragonRB.setEnabled(false);
-		annadir.diosRB.setEnabled(false);
-		
-	}
 }

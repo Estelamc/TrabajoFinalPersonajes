@@ -38,12 +38,12 @@ public class Personaje {
 	/**
 	 * Altura del personaje en metros.
 	 */
-	protected float altura;
+	protected double altura;
 	
 	/**
 	 * Peso del personaje en Kilos.
 	 */
-	protected float peso;
+	protected double peso;
 	
 	/**
 	 * Regi&oacute;n donde vive el personaje.
@@ -98,14 +98,13 @@ public class Personaje {
 	 * </ul>
 	 * 
 	 */
-	private static Pattern patronNombre = Pattern.compile("^[A-ZÁÉÍÓÚ][[a-z]+&&[-]&&[A-ZÁÉÍÓÚ]]?[a-záéíóú]{2}+$");
+	private static Pattern patronNombre = Pattern.compile("^[A-ZÁÉÍÓÚÑ]([a-záéíóúñ]+[-][A-ZÁÉÍÓÚÑ])?[a-záéíóúñ]{2,}$");
 	
 	/**
 	 * Patr&oacute;n para comparar el apellido y saber si es v&aacute;lido.
 	 * A diferencia con el nombre, no se permiten guiones.
 	 */
-	private static Pattern patronApellido = Pattern.compile("^[A-ZÁÉÍÓÚÑ][a-zñ]+[-]?[A-ZÑ]?[a-záéíóúñ]+$");
-	// "^[A-ZÁÉÍÓÚ][a-z]{2}[a-záéíóú]+$"
+	private static Pattern patronApellido = Pattern.compile("^[A-ZÁÉÍÓÚÑ][a-zñáéíóú]{2,}$");
 	
 		
 	// -------------------------------------- MÉTODOS -------------------------------------- \\
@@ -131,7 +130,7 @@ public class Personaje {
 	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
-	protected Personaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, float altura, float peso, Region region, String descripcion) 
+	protected Personaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, double altura, double peso, Region region, String descripcion) 
 			throws ApellidoNoValidoException, NombreNoValidoException, RegionNoValidaException, 
 			SexoNoValidoException, AlturaNoValidaException, PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException {
 		setNombre(nombre);
@@ -221,7 +220,7 @@ public class Personaje {
 	 * 
 	 * @return La descripci&oacute;n del personaje.
 	 */
-	protected String getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
@@ -348,8 +347,8 @@ public class Personaje {
 	 * 
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 */
-	protected void setAltura(float altura) throws AlturaNoValidaException {
-		if(altura>1.50 && altura<2)
+	protected void setAltura(double altura) throws AlturaNoValidaException {
+		if(altura>1.50 && altura<2.0)
 			this.altura = altura;
 		else
 			throw new AlturaNoValidaException("La altura no es válida.");
@@ -362,8 +361,8 @@ public class Personaje {
 	 * 
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 */
-	protected void setPeso(float peso) throws PesoNoValidoException {
-		if(peso>45 && peso<80)
+	protected void setPeso(double peso) throws PesoNoValidoException {
+		if(peso>45.0 && peso<100.0)
 			this.peso = peso;
 		else
 			throw new PesoNoValidoException("El peso no es válido.");
@@ -443,7 +442,6 @@ public class Personaje {
 	 * @return El apellido.
 	 */
 	public String getApellido() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -452,7 +450,7 @@ public class Personaje {
 	 * 
 	 * @return La altura.
 	 */
-	public float getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
@@ -461,7 +459,7 @@ public class Personaje {
 	 * 
 	 * @return El peso.
 	 */
-	public float getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 

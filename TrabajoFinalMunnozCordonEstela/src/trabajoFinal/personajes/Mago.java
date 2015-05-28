@@ -66,7 +66,7 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
 	protected Mago(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco,
-			int edad, float altura, float peso, Region region, Raza raza, String descripcion)
+			int edad, double altura, double peso, Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,

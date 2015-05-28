@@ -35,46 +35,22 @@ public class ListadoPersonajes {
 	
 	// -------------------- Añadir -------------------- \\
 	
-	public Personaje annadir(int opcion, String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			float altura, float peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, RazaNoValidaException {
-		
-		Personaje personaje = null;
-		
-		switch(opcion){
-			case 0:
-				return personaje= (Personaje) new Mago(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
-						raza, descripcion);
-			case 1:
-				return personaje= (Personaje) new Arquero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
-						raza, descripcion);
-			case 2:
-				return personaje= (Personaje) new Guerrero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
-						raza, descripcion);
-			case 3:
-				return personaje= (Personaje) new Dragon(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
-						descripcion);
-			case 4:
-				return personaje= (Personaje) new Dios(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
-						descripcion);
-			default:
-				return personaje;
-		}		
-	}
-	
 	/**
-	 * A&ntilde;ade un personaje al listado.
+	 * A&ntilde;ade un personaje.
 	 * 
+	 * @param opcion Opci&oacute;n por la que se a&ntilde;ade un personaje u otro.
 	 * @param nombre Nombre del personaje.
 	 * @param apellido Apellido del personaje.
-	 * @param sexo Sexo del personaje.
+	 * @param sexo Sexo del pesonaje.
 	 * @param zodiaco Signo del zodiaco del personaje.
 	 * @param edad Edad del personaje.
 	 * @param altura Altura del personaje.
 	 * @param peso Peso del personaje.
 	 * @param region Regi&oacute;n donde vive el personaje.
-	 * @param descripcion Informaci&oacute;n del personaje.
+	 * @param raza Raza del personaje.
+	 * @param descripcion Descripci&oacute;n informativa sobre el personaje.
+	 * 
+	 * @return El personaje a&ntilde;adido.
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
@@ -84,216 +60,43 @@ public class ListadoPersonajes {
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
+	 * @throws RazaNoValidaException Error por raza incorrecta.
+	 * @throws PersonajeYaExisteException Error al existir el personaje.
 	 */
-	public boolean annadirPersonaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			int altura, int peso, Region region, String descripcion) throws ApellidoNoValidoException, 
+	public boolean annadir(int opcion, String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
+			double altura, double peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
 			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException {
+			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException,
+			RazaNoValidaException {
 		
-		Personaje personaje = new Personaje(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, descripcion); // Se crea un personaje
+		Personaje personaje = null;
+		
+		switch(opcion){
+			case 0:
+				 personaje= new Mago(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
+						raza, descripcion);
+			case 1:
+				 personaje= new Arquero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
+						raza, descripcion);
+			case 2:
+				 personaje= new Guerrero(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
+						raza, descripcion);
+			case 3:
+				 personaje= new Dragon(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
+						descripcion);
+			case 4:
+				 personaje= new Dios(nombre, apellido, sexo, zodiaco, edad, altura, peso, region,
+						descripcion);
+		}
+		
 		if (listado.contains(personaje)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El personaje ya existe.");
+			throw new PersonajeYaExisteException("El personaje ya existe en el listado");
 		else{ // Si no lo contiene
-			return listado.add(personaje); // Devuelve el personaje añadido al listado
+			return listado.add(personaje); 
 		}	
-	}
-	
-	/**
-	 * A&ntilde;ade un mago al listado.
-	 * 
-	 * @param nombre Nombre del mago.
-	 * @param apellido Apellido del mago.
-	 * @param sexo Sexo del mago.
-	 * @param zodiaco Signo del zodiaco del mago.
-	 * @param edad Edad del mago.
-	 * @param altura Altura del mago.
-	 * @param peso Peso del mago.
-	 * @param region Regi&oacute;n donde vive el mago.
-	 * @param raza Raza del mago.
-	 * @param descripcion Informaci&oacute;n del mago.
-	 * 
-	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
-	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
-	 * @throws AlturaNoValidaException Error por altura incorrecta.
-	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
-	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
-	 */
-	public boolean annadirMago(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			int altura, int peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException, 
-			RazaNoValidaException {
 		
-		Mago mago = new Mago(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, raza, descripcion); // Se crea un mago
-		if (listado.contains(mago)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El mago ya existe.");
-		else{ // Si no lo contiene
-			return listado.add((Personaje)mago); // Devuelve el mago añadido al listado
-		}	
-	}
-	
-	/**
-	 * A&ntilde;ade un arquero al listado.
-	 * 
-	 * @param nombre Nombre del arquero.
-	 * @param apellido Apellido del arquero.
-	 * @param sexo Sexo del arquero.
-	 * @param zodiaco Signo del zodiaco del arquero.
-	 * @param edad Edad del arquero.
-	 * @param altura Altura del arquero.
-	 * @param peso Peso del arquero.
-	 * @param region Regi&oacute;n donde vive el arquero.
-	 * @param raza Raza del arquero.
-	 * @param descripcion Informaci&oacute;n del arquero.
-	 * 
-	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
-	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
-	 * @throws AlturaNoValidaException Error por altura incorrecta.
-	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
-	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
-	 */
-	public boolean annadirArquero(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			int altura, int peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException, 
-			RazaNoValidaException {
-		
-		Arquero arquero = new Arquero(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, raza, descripcion); // Se crea un arquero
-		if (listado.contains(arquero)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El arquero ya existe.");
-		else{ // Si no lo contiene
-			return listado.add((Personaje)arquero); // Devuelve el arquero añadido al listado
-		}	
-	}
-	
-	/**
-	 * A&ntilde;ade un guerrero al listado.
-	 * 
-	 * @param nombre Nombre del guerrero.
-	 * @param apellido Apellido del guerrero.
-	 * @param sexo Sexo del guerrero.
-	 * @param zodiaco Signo del zodiaco del guerrero.
-	 * @param edad Edad del guerrero.
-	 * @param altura Altura del guerrero.
-	 * @param peso Peso del guerrero.
-	 * @param region Regi&oacute;n donde vive el guerrero.
-	 * @param raza Raza del guerrero.
-	 * @param descripcion Informaci&oacute;n del guerrero.
-	 * 
-	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
-	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
-	 * @throws AlturaNoValidaException Error por altura incorrecta.
-	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
-	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
-	 */
-	public boolean annadirGuerrero(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			int altura, int peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException, 
-			RazaNoValidaException {
-		
-		Guerrero guerrero = new Guerrero(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, raza, descripcion); // Se crea un guerrero
-		if (listado.contains(guerrero)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El guerrero ya existe.");
-		else{ // Si no lo contiene
-			return listado.add((Personaje)guerrero); // Devuelve el guerrero añadido al listado
-		}	
-	}
-	
-	/**
-	 * A&ntilde;ade un drag&oacute;n al listado.
-	 * 
-	 * @param nombre Nombre del drag&oacute;n.
-	 * @param apellido Apellido del drag&oacute;n.
-	 * @param sexo Sexo del drag&oacute;n.
-	 * @param zodiaco Signo del zodiaco del drag&oacute;n.
-	 * @param edad Edad del drag&oacute;n.
-	 * @param altura Altura del drag&oacute;n.
-	 * @param peso Peso del drag&oacute;n.
-	 * @param region Regi&oacute;n donde vive el drag&oacute;n.
-	 * @param descripcion Informaci&oacute;n del drag&oacute;n.
-	 * 
-	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
-	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
-	 * @throws AlturaNoValidaException Error por altura incorrecta.
-	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
-	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
-	 */
-	public boolean annadirDragon(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			int altura, int peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException {
-		
-		Dragon dragon = new Dragon(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, descripcion); // Se crea un dragón
-		if (listado.contains(dragon)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El dragón ya existe.");
-		else{ // Si no lo contiene
-			return listado.add((Personaje)dragon); // Devuelve el dragón añadido al listado
-		}	
 	}
 		
-	/**
-	 * A&ntilde;ade un dios al listado.
-	 * 
-	 * @param nombre Nombre del dios.
-	 * @param apellido Apellido del dios.
-	 * @param sexo Sexo del dios.
-	 * @param zodiaco Signo del zodiaco del dios.
-	 * @param edad Edad del dios.
-	 * @param altura Altura del dios.
-	 * @param peso Peso del dios.
-	 * @param region Regi&oacute;n donde vive el dios.
-	 * @param descripcion Informaci&oacute;n del dios.
-	 * 
-	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
-	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
-	 * @throws AlturaNoValidaException Error por altura incorrecta.
-	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
-	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws PersonajeYaExisteException Erro al existir el personaje.
-	 */
-	public boolean annadirDios(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, 
-			float altura, float peso, Region region, Raza raza, String descripcion) throws ApellidoNoValidoException, 
-			NombreNoValidoException, RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, PersonajeYaExisteException {
-		
-		Dios dios = new Dios(nombre, apellido, sexo, zodiaco, edad, altura, 
-				peso, region, descripcion); // Se crea un dios
-		if (listado.contains(dios)) // Si ya lo contiene, crea la excepción
-			throw new PersonajeYaExisteException("El dios ya existe.");
-		else{ // Si no lo contiene
-			return listado.add((Personaje)dios); // Devuelve el dios añadido al listado
-		}	
-	}
-	
 	
 	// -------------------- Eliminar -------------------- \\
 	
