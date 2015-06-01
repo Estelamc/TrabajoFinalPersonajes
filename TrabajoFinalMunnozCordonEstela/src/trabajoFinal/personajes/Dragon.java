@@ -1,6 +1,5 @@
 package trabajoFinal.personajes;
 
-
 /**
  * Crea un drag&oacute;n.
  * 
@@ -12,6 +11,11 @@ package trabajoFinal.personajes;
 public class Dragon extends Personaje {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
+
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = 4763195006103293652L;
 
 	/**
 	 * Vida del drag&oacute;n.
@@ -63,19 +67,15 @@ public class Dragon extends Personaje {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
 	public Dragon(String nombre, String apellido, Sexo sexo,
 			Zodiaco zodiaco, int edad, double altura, double peso, Region region, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
-			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			ZodiacoNoValidoException, EdadNoValidaException {
+			EdadNoValidaException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 	}
 

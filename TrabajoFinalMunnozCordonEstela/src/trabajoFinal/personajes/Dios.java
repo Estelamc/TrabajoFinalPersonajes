@@ -1,6 +1,5 @@
 package trabajoFinal.personajes;
 
-
 /**
  * Crea y controla a un arquero.
  * 
@@ -13,6 +12,11 @@ public class Dios extends Personaje {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = -2707092945740696468L;
+
 	/**
 	 * Vida del dios.
 	 */
@@ -71,19 +75,15 @@ public class Dios extends Personaje {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por region incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
 	public Dios(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco,
 			int edad, double altura, double peso, Region region, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
-			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			ZodiacoNoValidoException, EdadNoValidaException {
+			EdadNoValidaException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 	}
 	
@@ -196,4 +196,5 @@ public class Dios extends Personaje {
 		else
 			danno = (fuerza+inteligencia+habilidad+velocidad)/3;
 	}
+
 }

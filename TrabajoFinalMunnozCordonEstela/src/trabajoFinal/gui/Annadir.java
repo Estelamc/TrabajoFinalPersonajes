@@ -16,13 +16,18 @@ import trabajoFinal.personajes.Personaje;
 import trabajoFinal.personajes.PersonajeYaExisteException;
 import trabajoFinal.personajes.PesoNoValidoException;
 import trabajoFinal.personajes.Raza;
-import trabajoFinal.personajes.RazaNoValidaException;
 import trabajoFinal.personajes.Region;
-import trabajoFinal.personajes.RegionNoValidaException;
 import trabajoFinal.personajes.Sexo;
-import trabajoFinal.personajes.SexoNoValidoException;
+import trabajoFinal.personajes.Tipo;
 import trabajoFinal.personajes.Zodiaco;
-import trabajoFinal.personajes.ZodiacoNoValidoException;
+
+/**
+ * Ventana que a&ntilde;ade un personaje al listado.
+ * 
+ * @author Estela Mu&ntilde;oz Cord&oacute;n
+ * @version 1.0 
+ *
+ */
 
 public class Annadir extends VentanaPadre {
 
@@ -32,7 +37,7 @@ public class Annadir extends VentanaPadre {
 	private static final long serialVersionUID = -6537750238897758360L;
 
 	/**
-	 * Create the dialog.
+	 * Crea la ventana de di&aacute;logo.
 	 */
 	public Annadir() {
 		botonOK.setText("A\u00F1adir");
@@ -62,46 +67,43 @@ public class Annadir extends VentanaPadre {
 	}
 
 	/**
-	 * A&ntilde;ade un coche al concesionario.
+	 * A&ntilde;ade un personaje al listado.
 	 */
 	private void annadir() {
 		try {
-			//Personaje personaje = 
 			General.personajes.annadir(getTipoPersonaje(), nombreCampo.getText(), apellidoCampo.getText(), 
 					(Sexo)sexoComboBox.getSelectedItem(), (Zodiaco)zodiacoComboBox.getSelectedItem(),
-					Integer.parseInt(edadCampo.getText()), Float.parseFloat(alturaCampo.getText()), 
-					Float.parseFloat(pesoCampo.getText()), (Region)regionComboBox.getSelectedItem(), 
+					Integer.parseInt(edadCampo.getText()), Double.parseDouble(alturaCampo.getText()), 
+					Double.parseDouble(pesoCampo.getText()), (Region)regionComboBox.getSelectedItem(), 
 					(Raza) razaComboBox.getSelectedItem(), descripcionCampo.getText());
 			Gestion.setModificado(true);
 			JOptionPane.showMessageDialog(panelContenedor, "Personaje añadido con éxito.", "Acción realizada", 
 				JOptionPane.INFORMATION_MESSAGE);
 		} catch (ApellidoNoValidoException | PersonajeYaExisteException
-				| NombreNoValidoException | RegionNoValidaException
-				| SexoNoValidoException | AlturaNoValidaException
-				| PesoNoValidoException | ZodiacoNoValidoException
-				| EdadNoValidaException | RazaNoValidaException e) {
+				| NombreNoValidoException | AlturaNoValidaException
+				| PesoNoValidoException | EdadNoValidaException e) {
 			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}		
 	}
 	
 	/**
-	 * Devuelve un entero seg&uacute;n el tipo de
-	 * personaje seleccionado.
+	 * Devuelve un tipo de personaje seg&uacute;n 
+	 * lo que hemos seleccionado.
 	 * 
-	 * @return Un entero.
+	 * @return El tipo de personaje.
 	 */
-	private int getTipoPersonaje() {
+	private Tipo getTipoPersonaje() {
 		if (magoRB.isSelected())
-			return 0;
+			return Tipo.MAGO;
 		else if (arqueroRB.isSelected())
-			return 1;
+			return Tipo.ARQUERO;
 		else if (guerreroRB.isSelected())
-			return 2;
+			return Tipo.GUERRERO;
 		else if (dragonRB.isSelected())
-			return 3;
+			return Tipo.DRAGÓN;
 		else if (diosRB.isSelected())
-			return 4;
+			return Tipo.DIOS;
 		else
-			return 5;
+			return null;
 	}
 }

@@ -1,6 +1,5 @@
 package trabajoFinal.personajes;
 
-
 /**
  * Crea y controla a un arquero.
  * 
@@ -13,6 +12,11 @@ public class Arquero extends Personaje implements Razable {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = -6833821500509174638L;
+
 	/**
 	 * Raza del arquero.
 	 */
@@ -58,24 +62,17 @@ public class Arquero extends Personaje implements Razable {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto. 
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
 	protected Arquero(String nombre, String apellido, Sexo sexo,
-			Zodiaco zodiaco, int edad, double altura, double peso, Region region, Raza raza, String descripcion)
-			throws ApellidoNoValidoException, NombreNoValidoException,
-			RegionNoValidaException, SexoNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException, 
-			RazaNoValidaException {
-		
+			Zodiaco zodiaco, int edad, double altura, double peso, Region region, 
+			Raza raza, String descripcion)	throws ApellidoNoValidoException, 
+			NombreNoValidoException, AlturaNoValidaException, 
+			PesoNoValidoException, EdadNoValidaException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 		setRaza(raza);
-		
 	}
 		
 	@Override
@@ -118,13 +115,9 @@ public class Arquero extends Personaje implements Razable {
 	 * Modifica la raza del arquero.
 	 * 
 	 * @param raza Raza del arquero.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
-	private void setRaza(Raza raza) throws RazaNoValidaException {
-		if(raza!=null)
-			this.raza = raza;
-		else
-			throw new RazaNoValidaException("La raza no es válida.");
+	private void setRaza(Raza raza) {
+		this.raza = raza;
 	}
 
 	/**
@@ -216,7 +209,5 @@ public class Arquero extends Personaje implements Razable {
 	public void ataqueBasico() {
 		danno = 3;
 	}
-	
-	
 
 }
