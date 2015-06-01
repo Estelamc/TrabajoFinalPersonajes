@@ -25,6 +25,8 @@ import trabajoFinal.personajes.Zodiaco;
 import javax.swing.border.EtchedBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 /**
  * Ventana de di&aacute;logo con la que gestionamos el listado de personajes.
@@ -41,7 +43,7 @@ public class VentanaPadre extends JDialog {
 	/**
 	 * Identificador de versi&oacute;n de serie predeterminado.
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 6626160884706614280L;
 
 	/**
 	 * Panel que contiene los elementos de la ventana.
@@ -56,7 +58,7 @@ public class VentanaPadre extends JDialog {
 	/**
 	 * Etiqueta para el apellido del personaje.
 	 */
-	protected final JLabel apellidoEtiqueta = new JLabel("Apellido");
+	protected JLabel apellidoEtiqueta = new JLabel("Apellido");
 	/**
 	 * Etiqueta para la edad del personaje.
 	 */
@@ -76,7 +78,7 @@ public class VentanaPadre extends JDialog {
 	/**
 	 * Campo para escribir el apellido del personaje.
 	 */
-	protected final JTextField apellidoCampo = new JTextField();
+	protected JTextField apellidoCampo = new JTextField();
 	/**
 	 * Campo para escribir la edad del personaje.
 	 */
@@ -94,11 +96,11 @@ public class VentanaPadre extends JDialog {
 	/**
 	 * Campo de texto para la descripci&oacute;n del personaje.
 	 */
-	protected final JTextPane descripcionCampo = new JTextPane();
+	protected JTextPane descripcionCampo = new JTextPane();
 	/**
 	 * Etiqueta para la descripción del personaje.
 	 */
-	protected final JLabel descripcionEtiqueta = new JLabel("Descripci\u00F3n");
+	protected JLabel descripcionEtiqueta = new JLabel("Descripci\u00F3n");
 	
 	// --------- Botones Salir y OK --------- \\
 	/**
@@ -156,47 +158,67 @@ public class VentanaPadre extends JDialog {
 	/**
 	 * Etiqueta para la regi&oacute;n del personaje.
 	 */
-	protected final JLabel regionEtiqueta = new JLabel("Regi\u00F3n");
+	protected JLabel regionEtiqueta = new JLabel("Regi\u00F3n");
 	/**
 	 * Etiqueta para la raza del personaje.
 	 */
-	protected final JLabel razaEtiqueta = new JLabel("Raza");
+	protected JLabel razaEtiqueta = new JLabel("Raza");
 	/**
 	 * Etiqueta para el icono del mago.
 	 */
-	protected final JLabel iconoM = new JLabel("");
+	protected JLabel iconoM = new JLabel("");
 	/**
 	 * Etiqueta para el icono del arquero.
 	 */
-	protected final JLabel iconoA = new JLabel("");
+	protected JLabel iconoA = new JLabel("");
 	/**
 	 * Etiqueta para el icono del guerrero.
 	 */
-	protected final JLabel iconoG = new JLabel("");
+	protected JLabel iconoG = new JLabel("");
 	/**
 	 * Etiqueta para el icono del dios.
 	 */
-	protected final JLabel iconoI = new JLabel("");
+	protected JLabel iconoI = new JLabel("");
 	/**
 	 * Etiqueta para el icono del drag&oacute;n.
 	 */
-	protected final JLabel iconoD = new JLabel("");
+	protected JLabel iconoD = new JLabel("");	
+	/**
+	 * Etiqueta para el icono del sexo.
+	 */
+	protected JLabel iconoSexo = new JLabel("");
+	/**
+	 * Etiqueta para el icono de la regi&oacute;n.
+	 */
+	protected JLabel iconoRegion = new JLabel("");
+	/**
+	 * Etiqueta para el icono del zodiaco.
+	 */
+	protected JLabel iconoZodiaco = new JLabel("");
+	/**
+	 * Etiqueta para el icono de la raza.
+	 */
+	protected JLabel iconoRaza = new JLabel("");
+	/**
+	 * Etiqueta para el icono del nombre.
+	 */
+	protected JLabel iconoNombre = new JLabel("");
 	/**
 	 * Etiqueta para el icono del del apellido.
 	 */
-	private final JLabel iconoApellido = new JLabel("");
+	protected JLabel iconoApellido = new JLabel("");
 	/**
 	 * Etiqueta para el icono de la edad.
 	 */
-	private final JLabel iconoEdad = new JLabel("");
+	protected JLabel iconoEdad = new JLabel("");
 	/**
 	 * Etiqueta para el icono de la altura.
 	 */
-	private final JLabel iconoAltura = new JLabel("");
+	protected JLabel iconoAltura = new JLabel("");
 	/**
 	 * Etiqueta para el icono del peso.
 	 */
-	private final JLabel iconoPeso = new JLabel("");
+	protected JLabel iconoPeso = new JLabel("");
 	/**
 	 * Lista de g&eacute;neros disponibles para elegir.
 	 */
@@ -243,24 +265,24 @@ public class VentanaPadre extends JDialog {
 		tipoPanel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Personajes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		tipoPanel.setBounds(23, 57, 129, 152);
 		panelContenedor.add(tipoPanel);
-		iconoD.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
-		iconoD.setBounds(93, 94, 21, 23);
-		
-		tipoPanel.add(iconoD);
-		iconoG.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
-		iconoG.setBounds(93, 68, 21, 23);
-		
-		tipoPanel.add(iconoG);
+		iconoA.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
+		iconoA.setBounds(93, 42, 21, 23);
+		tipoPanel.add(iconoA);
 		iconoI.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Priest_1_Icon_16.png")));
 		iconoI.setBounds(93, 120, 21, 23);
 		
 		tipoPanel.add(iconoI);
+		iconoG.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
+		iconoG.setBounds(93, 68, 21, 23);
+		
+		tipoPanel.add(iconoG);
 		iconoM.setBounds(93, 16, 21, 23);
 		tipoPanel.add(iconoM);
 		iconoM.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
-		iconoA.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
-		iconoA.setBounds(93, 42, 21, 23);
-		tipoPanel.add(iconoA);
+		iconoD.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
+		iconoD.setBounds(93, 94, 21, 23);
+		
+		tipoPanel.add(iconoD);
 		tipoGrupo.add(magoRB);
 		
 		// mago
@@ -276,6 +298,13 @@ public class VentanaPadre extends JDialog {
 		arqueroRB.setBounds(6, 42, 109, 23);
 		tipoPanel.add(arqueroRB);
 		tipoGrupo.add(guerreroRB);
+		/*guerreroRB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				razaComboBox.setVisible(true);
+				iconoRaza.setVisible(true);
+				razaEtiqueta.setVisible(true);
+			}
+		});*/
 		
 		// guerrero
 		guerreroRB.setForeground(new Color(165, 42, 42));
@@ -285,6 +314,20 @@ public class VentanaPadre extends JDialog {
 		
 		// dragón
 		tipoGrupo.add(dragonRB);
+		dragonRB.addFocusListener(new FocusAdapter() {
+			@Override // Al seleccionarse no se ve la raza
+			public void focusGained(FocusEvent arg0) {
+				razaComboBox.setVisible(false);
+				iconoRaza.setVisible(false);
+				razaEtiqueta.setVisible(false);
+			}
+			@Override // Al deseleccionarse se ve la raza de nuevo
+			public void focusLost(FocusEvent e) {
+				razaComboBox.setVisible(true);
+				iconoRaza.setVisible(true);
+				razaEtiqueta.setVisible(true);
+			}
+		});
 		dragonRB.setFont(new Font("Tahoma", Font.BOLD, 11));
 		dragonRB.setForeground(new Color(51, 102, 51));
 		dragonRB.setBounds(6, 94, 109, 23);
@@ -292,6 +335,20 @@ public class VentanaPadre extends JDialog {
 		
 		// dios
 		tipoGrupo.add(diosRB);
+		diosRB.addFocusListener(new FocusAdapter() {
+			@Override // Al seleccionarse no se ve la raza
+			public void focusGained(FocusEvent e) {
+				razaComboBox.setVisible(false);
+				iconoRaza.setVisible(false);
+				razaEtiqueta.setVisible(false);
+			}
+			@Override // Al deseleccionarse se ve la raza de nuevo
+			public void focusLost(FocusEvent e) {
+				razaComboBox.setVisible(true);
+				iconoRaza.setVisible(true);
+				razaEtiqueta.setVisible(true);
+			}
+		});
 		diosRB.setForeground(new Color(102, 0, 102));
 		diosRB.setFont(new Font("Tahoma", Font.BOLD, 11));
 		diosRB.setBounds(6, 120, 109, 23);
@@ -366,30 +423,25 @@ public class VentanaPadre extends JDialog {
 		panelContenedor.add(apellidoEtiqueta);
 		apellidoCampo.setColumns(10);
 		apellidoCampo.setBounds(406, 23, 165, 20);
-		
 		panelContenedor.add(apellidoCampo);
-		
-		JLabel iconoSexo = new JLabel("");
+			
 		iconoSexo.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
 		iconoSexo.setBounds(221, 56, 21, 23);
 		panelContenedor.add(iconoSexo);
-		
-		JLabel iconoRegion = new JLabel("");
+			
 		iconoRegion.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
 		iconoRegion.setBounds(359, 57, 21, 23);
 		panelContenedor.add(iconoRegion);
-		
-		JLabel iconoZodiaco = new JLabel("");
+				
 		iconoZodiaco.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
 		iconoZodiaco.setBounds(239, 117, 21, 23);
 		panelContenedor.add(iconoZodiaco);
-		
-		JLabel iconoRaza = new JLabel("");
+				
 		iconoRaza.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
 		iconoRaza.setBounds(351, 117, 21, 23);
 		panelContenedor.add(iconoRaza);
 		
-		JLabel iconoNombre = new JLabel("");
+		
 		iconoNombre.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
 		iconoNombre.setBounds(18, 21, 21, 23);
 		panelContenedor.add(iconoNombre);

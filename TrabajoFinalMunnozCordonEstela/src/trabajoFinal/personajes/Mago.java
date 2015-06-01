@@ -1,6 +1,5 @@
 package trabajoFinal.personajes;
 
-
 /**
  * Crea y controla a un mago.
  * 
@@ -9,10 +8,15 @@ package trabajoFinal.personajes;
  *
  */
 
-public class Mago extends Personaje implements Hechizable, Razable {
+public class Mago extends Personaje implements Razable {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = 4356716828296440895L;
+
 	/**
 	 * Raza del mago.
 	 */
@@ -57,20 +61,14 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto. 
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute; incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
 	protected Mago(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco,
 			int edad, double altura, double peso, Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
-			RegionNoValidaException, SexoNoValidoException,
-			AlturaNoValidaException, PesoNoValidoException,
-			ZodiacoNoValidoException, EdadNoValidaException, RazaNoValidaException {
+			AlturaNoValidaException, PesoNoValidoException, EdadNoValidaException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 		setRaza(raza);
 	}
@@ -126,11 +124,8 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * 
 	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
-	private void setRaza(Raza raza) throws RazaNoValidaException {
-		if(raza!=null)
-			this.raza = raza;
-		else
-			throw new RazaNoValidaException("La raza no es válida.");
+	private void setRaza(Raza raza) {
+		this.raza = raza;
 	}	
 	
 	/**
@@ -174,7 +169,6 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * y provocando una cantidad de da&ntilde;o.
 	 *  
 	 */
-	@Override
 	public void bolaDeFuego() {
 		mana -= 2;
 		danno = inteligencia+2;
@@ -184,7 +178,6 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * Ataca con una lanza de hielo, reduciendo man&aacute;a
 	 * y provocando una cantidad de da&ntilde;o.
 	 */
-	@Override
 	public void lanzaDeHielo() {
 		mana -= 3;
 		danno = inteligencia+3;		
@@ -194,7 +187,6 @@ public class Mago extends Personaje implements Hechizable, Razable {
 	 * Ataca con un rayo, reduciendo man&aacute;a
 	 * y provocando una cantidad de da&ntilde;o.
 	 */
-	@Override
 	public void rayo() {
 		mana -= 4;
 		danno = inteligencia+4;		

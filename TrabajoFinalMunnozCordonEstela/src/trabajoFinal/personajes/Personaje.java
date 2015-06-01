@@ -1,5 +1,6 @@
 package trabajoFinal.personajes;
 
+import java.io.Serializable;
 import java.util.regex.Pattern;
 
 /**
@@ -10,10 +11,15 @@ import java.util.regex.Pattern;
  *
  */
 
-public class Personaje {
+public class Personaje implements Serializable {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = -7180488114932920741L;
+
 	// ********** Datos Generales ********** \\
 	/**
 	 * Nombre del personaje.
@@ -123,16 +129,14 @@ public class Personaje {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
-	protected Personaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, int edad, double altura, double peso, Region region, String descripcion) 
-			throws ApellidoNoValidoException, NombreNoValidoException, RegionNoValidaException, 
-			SexoNoValidoException, AlturaNoValidaException, PesoNoValidoException, ZodiacoNoValidoException, EdadNoValidaException {
+	protected Personaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, 
+			int edad, double altura, double peso, Region region, String descripcion) 
+			throws ApellidoNoValidoException, NombreNoValidoException,  
+			AlturaNoValidaException, PesoNoValidoException,  EdadNoValidaException {
 		setNombre(nombre);
 		setApellido(apellido);
 		setSexo(sexo);
@@ -205,14 +209,9 @@ public class Personaje {
 	 * Modifica la regi&oacute;n donde habita el personaje.
 	 * 
 	 * @param region Regi&oacute;n donde vive el personaje.
-	 * 
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
 	 */
-	protected void setRegion(Region region) throws RegionNoValidaException { // SE CONTROLA EN CONSTRUCTOR, NO AQUÍ
-		if(region!=null)
-			this.region = region;
-		else
-			throw new RegionNoValidaException("La región no es válida.");
+	protected void setRegion(Region region) { // SE CONTROLA EN CONSTRUCTOR, NO AQUÍ
+		this.region = region;
 	}
 
 	/**
@@ -283,14 +282,9 @@ public class Personaje {
 	 * Modifica el sexo del personaje.
 	 * 
 	 * @param sexo G&eacute;nero del personaje.
-	 * 
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 */
-	protected void setSexo(Sexo sexo) throws SexoNoValidoException { // SE CONTROLA EN CONSTRUCTOR, NO AQUÍ
-		if(sexo!=null)
-			this.sexo = sexo;
-		else
-			throw new SexoNoValidoException("El Sexo no es válido.");
+	protected void setSexo(Sexo sexo) { // SE CONTROLA EN CONSTRUCTOR, NO AQUÍ
+		this.sexo = sexo;
 	}
 	
 	/**
@@ -306,14 +300,9 @@ public class Personaje {
 	 * Modifica el signo del zodiaco del personaje.
 	 * 
 	 * @param zodiaco Signo del zodiaco.
-	 * 
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 */
-	protected void setZodiaco(Zodiaco zodiaco) throws ZodiacoNoValidoException {
-		if(zodiaco!=null)
-			this.zodiaco = zodiaco;
-		else
-			throw new ZodiacoNoValidoException("El zodiaco no es válido.");
+	protected void setZodiaco(Zodiaco zodiaco) {
+		this.zodiaco = zodiaco;
 	}
 	
 	/**
@@ -334,7 +323,7 @@ public class Personaje {
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 */
 	protected void setEdad(int edad) throws EdadNoValidaException {
-		if(edad>16 && edad<80)
+		if(edad>16 && edad<100)
 			this.edad = edad;
 		else
 			throw new EdadNoValidaException("La edad no es válida.");
@@ -348,7 +337,7 @@ public class Personaje {
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 */
 	protected void setAltura(double altura) throws AlturaNoValidaException {
-		if(altura>1.50 && altura<2.0)
+		if(altura>1.40 && altura<2.0)
 			this.altura = altura;
 		else
 			throw new AlturaNoValidaException("La altura no es válida.");
@@ -362,10 +351,46 @@ public class Personaje {
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 */
 	protected void setPeso(double peso) throws PesoNoValidoException {
-		if(peso>45.0 && peso<100.0)
+		if(peso>40.0 && peso<200.0)
 			this.peso = peso;
 		else
 			throw new PesoNoValidoException("El peso no es válido.");
+	}
+	
+	/**
+	 * Devuelve el nombre del pesonaje.
+	 * 
+	 * @return El nombre.
+	 */
+	public String getNombre() {
+		return null;
+	}
+	
+	/**
+	 * Devuelve el apellido del personaje.
+	 * 
+	 * @return El apellido.
+	 */
+	public String getApellido() {
+		return null;
+	}
+
+	/**
+	 * Devuelve la altura del personaje.
+	 * 
+	 * @return La altura.
+	 */
+	public double getAltura() {
+		return altura;
+	}
+
+	/**
+	 * Devuelve el peso del personaje.
+	 * 
+	 * @return El peso.
+	 */
+	public double getPeso() {
+		return peso;
 	}
 	
 	/**
@@ -422,45 +447,9 @@ public class Personaje {
 		if (nombre == null) {
 			if (other.nombre != null)
 				return false;
-		} else if (!nombre.equals(other.nombre))
+		} else if (!nombre.equalsIgnoreCase(other.nombre))
 			return false;
 		return true;
-	}
-	
-	/**
-	 * Devuelve el nombre del pesonaje.
-	 * 
-	 * @return El nombre.
-	 */
-	public String getNombre() {
-		return null;
-	}
-	
-	/**
-	 * Devuelve el apellido del personaje.
-	 * 
-	 * @return El apellido.
-	 */
-	public String getApellido() {
-		return null;
-	}
-
-	/**
-	 * Devuelve la altura del personaje.
-	 * 
-	 * @return La altura.
-	 */
-	public double getAltura() {
-		return altura;
-	}
-
-	/**
-	 * Devuelve el peso del personaje.
-	 * 
-	 * @return El peso.
-	 */
-	public double getPeso() {
-		return peso;
 	}
 
 }

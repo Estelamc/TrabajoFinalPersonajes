@@ -1,6 +1,5 @@
 package trabajoFinal.personajes;
 
-
 /**
  * Crea un guerrero.
  * 
@@ -9,10 +8,15 @@ package trabajoFinal.personajes;
  *
  */
 
-public class Guerrero extends Personaje implements Razable, Guerreable {
+public class Guerrero extends Personaje implements Razable {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
+	/**
+	 * Identificador de versi&oacute;n.
+	 */
+	private static final long serialVersionUID = -4211167310773511237L;
+
 	/**
 	 * Raza del guerrero.
 	 */
@@ -73,9 +77,8 @@ public class Guerrero extends Personaje implements Razable, Guerreable {
 	public Guerrero(String nombre, String apellido, Sexo sexo,
 			Zodiaco zodiaco, int edad, double altura, double peso, Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
-			RegionNoValidaException, SexoNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			ZodiacoNoValidoException, EdadNoValidaException, RazaNoValidaException {
+			EdadNoValidaException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 		setRaza(raza);
 	}
@@ -102,14 +105,9 @@ public class Guerrero extends Personaje implements Razable, Guerreable {
 	 * Modifica la raza del guerrero.
 	 * 
 	 * @param raza Raza del guerrero.
-	 * 
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
-	private void setRaza(Raza raza) throws RazaNoValidaException {
-		if(raza!=null)
-			this.raza = raza;
-		else
-			throw new RazaNoValidaException("La raza no es válida.");
+	private void setRaza(Raza raza) {
+		this.raza = raza;
 	}
 	
 	/**
@@ -222,6 +220,14 @@ public class Guerrero extends Personaje implements Razable, Guerreable {
 	 */
 	public void embestida() {
 		danno = 3+constitucion;
+	}
+	
+	/**
+	 * Ataque b&aacute;sico del guerrero.
+	 */
+	@Override
+	public void ataqueBasico() {
+		danno = 4;
 	}
 	
 }

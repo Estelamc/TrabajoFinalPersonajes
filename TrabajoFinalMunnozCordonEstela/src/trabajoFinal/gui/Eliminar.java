@@ -1,6 +1,5 @@
 package trabajoFinal.gui;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import trabajoFinal.personajes.General;
 import trabajoFinal.personajes.Gestion;
@@ -75,7 +74,6 @@ public class Eliminar extends VentanaPadre {
 	 * Elimina un personaje del listado.
 	 */
 	private void eliminar() {
-		
 		try {
 			General.personajes.eliminar(nombreCampo.getText());
 			Gestion.setModificado(true);

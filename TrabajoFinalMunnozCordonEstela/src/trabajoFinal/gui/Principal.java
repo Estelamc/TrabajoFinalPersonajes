@@ -105,240 +105,54 @@ public class Principal {
 	private final JMenu menuPersonaje = new JMenu("Personaje");
 	
 	/**
-	 * Men&uacute; A&ntilde;adir Personaje.
+	 * Submen&uacute; A&ntilde;adir Personaje.
 	 */
-	private final JMenuItem menuAnnadirP = new JMenuItem("A\u00F1adir");
+	private final JMenuItem menuAnnadir = new JMenuItem("A\u00F1adir");
 	
 	/**
-	 * Men&uacute; Eliminar Personaje.
+	 * Submen&uacute; Eliminar Personaje.
 	 */
-	private final JMenuItem menuEliminarP = new JMenuItem("Eliminar");
+	private final JMenuItem menuEliminar = new JMenuItem("Eliminar");
 	
 	/**
-	 * Men&uacute; Buscar Personaje.
+	 * Submen&uacute; Buscar Personaje por el Tipo.
 	 */
-	private final JMenu menuBuscarP = new JMenu("Buscar");
+	private final JMenu menuBuscarP = new JMenu("Buscar Tipos");
 	
 	/**
-	 * Men&uacute; Buscar Personaje por el Nombre.
+	 * Submen&uacute; Buscar Personaje por el Nombre.
 	 */
-	private final JMenuItem menuNombreP = new JMenuItem("Buscar por el nombre");
+	private final JMenuItem menuBuscarN = new JMenuItem("Buscar Nombre");
 	
 	/**
-	 * Men&uacute; Buscar Personaje por el Sexo.
+	 * Submen&uacute; Buscar Magos.
 	 */
-	private final JMenuItem menuSexoP = new JMenuItem("Buscar por el sexo");
+	private JMenuItem menuBuscarM = new JMenuItem("Buscar Magos");
 	
 	/**
-	 * Men&uacute; Buscar Personaje por la Regi&oacute;n.
+	 * Submen&uacute; Buscar Arqueros.
 	 */
-	private final JMenuItem menuRegionP = new JMenuItem("Buscar por la regi\u00F3n");
+	private	JMenuItem menuBuscarA = new JMenuItem("Buscar Arqueros");
 	
 	/**
-	 * Men&uacute; Buscar Personaje por el Zodiaco.
+	 * Submen&uacute; Buscar Guerreros.
 	 */
-	private final JMenuItem menuZodiacoP = new JMenuItem("Buscar por el zodiaco");
+	private	JMenuItem menuBuscarG = new JMenuItem("Buscar Guerreros");
 	
 	/**
-	 * Men&uacute; Buscar Personaje por la Raza.
+	 * Submen&uacute; Buscar Dioses.
 	 */
-	private final JMenuItem menuRazaP = new JMenuItem("Buscar por la raza");
-	/**
-	 * Men&uacute; Mostrar Personajes.
-	 */
-	private final JMenuItem menuMostrarP = new JMenuItem("Mostrar");
+	private	JMenuItem menuBuscarD = new JMenuItem("Buscar Dioses");
 	
 	/**
-	 * Men&uacute; Total de Personajes.
+	 * Submen&uacute; Buscar Dragones.
 	 */
-	private final JMenuItem menuTotalP = new JMenuItem("Total");
-	
-	
-	// ----------------------------------- Mago ---- \\
+	private	JMenuItem menuBuscarDr = new JMenuItem("Buscar Dragones");
 	
 	/**
-	 * Men&uacute; Mago. 
+	 * Submen&uacute; Mostrar Personajes.
 	 */
-	private JMenu menuMago = new JMenu("Mago");
-	
-	/**
-	 * Men&uacute; Buscar magos.
-	 */
-	private final JMenu menuBuscarM = new JMenu("Buscar");
-	
-	/**
-	 * Submen&uacute; Buscar mago por el nombre.
-	 */
-	private JMenuItem menuNombreM = new JMenuItem("Buscar por el nombre");	
-	
-	/**
-	 * Submen&uacute; Buscar magos por el sexo.
-	 */
-	private JMenuItem menuSexoM = new JMenuItem("Buscar por el sexo");
-	
-	/**
-	 * Men&uacute; Buscar magos por la regi&oacute;n.
-	 */
-	private JMenuItem menuRegionM = new JMenuItem("Buscar por la regi\u00F3n");
-	
-	/**
-	 * Men&uacute; Buscar magos por el signo del zodiaco.
-	 */
-	JMenuItem menuZodiacoM = new JMenuItem("Buscar por el zodiaco");
-	
-	/**
-	 * Submen&uacute; Buscar magos por la raza.
-	 */
-	private final JMenuItem menuRazaM = new JMenuItem("Buscar por la raza");
-	
-	/**
-	 * Submen&uacute; Mostrar magos existentes.
-	 */
-	private JMenuItem menuMostrarM = new JMenuItem("Mostrar magos");
-	
-	/**
-	 * Submen&uacute; Total de magos.
-	 */
-	private JMenuItem menuTotalM = new JMenuItem("Total de magos");
-	
-		
-	// ----------------------------------- Arquero ---- \\
-	
-	/**
-	 * Men&uacute; Arquero.
-	 */
-	private JMenu menuArquero = new JMenu("Arquero");	
-	
-	/**
-	 * Men&uacute; para buscar arqueros.
-	 */
-	private final JMenu menuBuscarA = new JMenu("Buscar");
-	
-	/**
-	 * Men&uacute; para buscar un arquero por su nombre.
-	 */
-	private JMenuItem menuNombreA = new JMenuItem("Buscar por el nombre");	
-	
-	/**
-	 * Men&uacute; para buscar arqueros por el sexo.
-	 */
-	private JMenuItem menuSexoA = new JMenuItem("Buscar por el sexo");	
-	
-	/**
-	 * Men&uacute; para buscar arqueros por la regi&oacute;n.
-	 */
-	private JMenuItem menuRegionA = new JMenuItem("Buscar por la regi\u00F3n");	
-	
-	/**
-	 * Men&uacute; para buscar arqueros por el signo del zodiaco.
-	 */
-	private JMenuItem menuZodiacoA = new JMenuItem("Buscar por el zodiaco");
-	
-	/**
-	 * Men&uacute; para mostrar los arqueros existentes.
-	 */
-	private JMenuItem menuMostrarA = new JMenuItem("Mostrar arqueros");
-
-	/**
-	 * Men&uacute; para ver el total de arqueros.
-	 */
-	private JMenuItem menuTotalA = new JMenuItem("Total de arqueros");
-	
-	/**
-	 * Men&uacute; para buscar a un arquero por su raza.
-	 */
-	private final JMenuItem menuRazaA = new JMenuItem("Buscar por la raza");
-	
-	
-	// ----------------------------------- Guerrero ---- \\
-	
-	/**
-	 * Men&uacute; Guerrero.
-	 */
-	private final JMenu menuGuerrero = new JMenu("Guerrero");
-	
-	/**
-	 * Men&uacute; para buscar guerreros.
-	 */
-	private final JMenu menuBuscarG = new JMenu("Buscar");
-	
-	/**
-	 * Men&uacute; para buscar un guerrero por el nombre.
-	 */
-	private final JMenuItem menuNombreG = new JMenuItem("Buscar por el nombre");
-	
-	/**
-	 * Men&uacute; para buscar un guerrero por el sexo.
-	 */
-	private final JMenuItem menuSexoG = new JMenuItem("Buscar por el sexo");
-	
-	/**
-	 * Men&uacute; para buscar un guerrero por la regi&oacute;n.
-	 */
-	private final JMenuItem menuRegionG = new JMenuItem("Buscar por la regi\u00F3n");
-	
-	/**
-	 * Men&uacute; para buscar un guerrero por el signo del zodiaco.
-	 */
-	private final JMenuItem menuZodiacoG = new JMenuItem("Buscar por el zodiaco");
-	
-	/**
-	 * Men&uacute; para buscar un guerrero por su raza.
-	 */
-	private final JMenuItem menuRazaG = new JMenuItem("Buscar por la raza");
-	
-	/**
-	 * Men&uacute; para mostrar los guerreros existentes.
-	 */
-	private final JMenuItem menuMostrarG = new JMenuItem("Mostrar guerreros");
-	
-	/**
-	 * Men&uacute; para ver el total de guerreros existentes.
-	 */
-	private final JMenuItem menuTotalG = new JMenuItem("Total de guerreros");	
-	
-	
-	// ----------------------------------- Dragón ---- \\
-	
-	/**
-	 * Men&uacute; Drag&oacute;n.
-	 */
-	private final JMenu menuDragon = new JMenu("Drag\u00F3n");
-	
-	/**
-	 * Men&uacute; para buscar dragones.
-	 */
-	private final JMenu menuBuscarD = new JMenu("Buscar");
-	
-	/**
-	 * Men&uacute; para buscar un drag&oacute;n por su nombre.
-	 */
-	private final JMenuItem menuNombreD = new JMenuItem("Buscar por el nombre");
-	
-	/**
-	 * Men&uacute; para buscar dragones por el sexo.
-	 */
-	private final JMenuItem menuSexoD = new JMenuItem("Buscar por el sexo");
-	
-	/**
-	 * Men&uacute; para buscar dragones por la regi&oacute;n.
-	 */
-	private final JMenuItem menuRegionD = new JMenuItem("Buscar por la regi\u00F3n");
-	
-	/**
-	 * Men&uacute; para buscar dragones por el signo del zodiaco.
-	 */
-	private final JMenuItem menuZodiacoD = new JMenuItem("Buscar por el zodiaco");
-	
-	/**
-	 * Men&uacute; para mostrar los dragones existentes.
-	 */
-	private final JMenuItem menuMostrarD = new JMenuItem("Mostrar dragones");
-	
-	/**
-	 * Men&uacute; para ver el total de dragones.
-	 */
-	private final JMenuItem menuTotalD = new JMenuItem("Total de dragones");
+	private final JMenuItem menuMostrar = new JMenuItem("Mostrar");
 	
 	
 	// ----------------------------------- Ayuda ---- \\
@@ -421,7 +235,7 @@ public class Principal {
 		
 		ventanaPrincipal.setResizable(false); // No se le puede cambiar el tamaño
 		ventanaPrincipal.setTitle(General.personajes.getNombre() + " - "); // Le ponemos título a la ventana
-		ventanaPrincipal.setBounds(100, 100, 612, 300); // Dimesiones y ubicación de la ventana
+		ventanaPrincipal.setBounds(100, 100, 339, 294); // Dimesiones y ubicación de la ventana
 		ventanaPrincipal.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Botón x que no haga nada por defecto
 		ventanaPrincipal.setBackground(SystemColor.activeCaptionBorder);
 		ventanaPrincipal.setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource(
@@ -446,7 +260,7 @@ public class Principal {
 		ventanaPrincipal.getContentPane().setLayout(null); 
 	
 		// PARA AÑADIR UNA IMAGEN a la ventana		
-		imagen.setBounds(0, 11, 606, 252);
+		imagen.setBounds(0, 0, 333, 244);
 		ventanaPrincipal.getContentPane().add(imagen);
 		menuFicheros.setFont(new Font("Candara", Font.BOLD, 14));
 		menuFicheros.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Documents_Icon_16.png")));
@@ -526,93 +340,61 @@ public class Principal {
 		menuPersonaje.setFont(new Font("Candara", Font.BOLD, 14));
 		menuPersonaje.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Misc_User_Icon_16.png")));
 		menuBarra.add(menuPersonaje);
-		
-		menuAnnadirP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		menuPersonaje.add(menuAnnadirP);
 				
-		menuEliminarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
-		menuPersonaje.add(menuEliminarP);
+		menuAnnadir.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
+		menuPersonaje.add(menuAnnadir);
+			
+		menuEliminar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
+		menuPersonaje.add(menuEliminar);
 		
+		menuBuscarN.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));		
+		menuPersonaje.add(menuBuscarN);
+				
 		menuBuscarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuPersonaje.add(menuBuscarP);
 				
-		menuNombreP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-		menuBuscarP.add(menuNombreP);
-		
-		menuSexoP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		menuBuscarP.add(menuSexoP);
-		
-		menuRegionP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarP.add(menuRegionP);
-		
-		menuZodiacoP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarP.add(menuZodiacoP);
-		
-		menuRazaP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
-		menuBuscarP.add(menuRazaP);
+		menuBuscarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
+		menuBuscarP.add(menuBuscarM);
 				
-		menuMostrarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuPersonaje.add(menuMostrarP);
+		menuBuscarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
+		menuBuscarP.add(menuBuscarA);
 				
-		menuTotalP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuPersonaje.add(menuTotalP);
+		menuBuscarG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
+		menuBuscarP.add(menuBuscarG);
+				
+		menuBuscarD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Priest_1_Icon_16.png")));
+		menuBuscarP.add(menuBuscarD);
+				
+		menuBuscarDr.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
+		menuBuscarP.add(menuBuscarDr);
+						
+		menuMostrar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
+		menuPersonaje.add(menuMostrar);
 		
 		// ---- Añadir Teclas de Acceso Rápido ---- \\
 		
 		menuPersonaje.setMnemonic('P');
+		menuBuscarP.setMnemonic('B');
+		menuBuscarN.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
+		menuEliminar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_MASK));
+		menuAnnadir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));	
+		menuMostrar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK));
+		menuBuscarDr.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
+		menuBuscarD.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_MASK));
+		menuBuscarG.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, InputEvent.CTRL_MASK | InputEvent.ALT_MASK));
+		menuBuscarA.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK | InputEvent.ALT_MASK));
+		menuBuscarM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
 		
 		// ---- Añadir Acciones ---- \\
 		
-		menuAnnadirP.addActionListener(new ActionListener() { // AÑADIR PERSONAJE
+		menuAnnadir.addActionListener(new ActionListener() { // AÑADIR PERSONAJE
 			public void actionPerformed(ActionEvent e) {
 				Annadir annadir = new Annadir();
 				annadir.setVisible(true);
 			}
 		});
 		
-		menuTotalP.addActionListener(new ActionListener() { // MOSTRAR TOTAL PERSONAJES
-			public void actionPerformed(ActionEvent arg0) {
-				if(General.personajes.cantidadPersonajes() != 0){
-					Total total = new Total();
-					total.setVisible(true);
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"Oops... No hay personajes que contabilizar. "
-							+ "\nAñade personajes para poder ver cuántos hay.",
-							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuMostrarP.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(General.personajes.cantidadPersonajes() != 0){
-					/*Mostrar mostrar = new Mostrar();
-					mostrar.setVisible(true);*/
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"Oops... No hay personajes que contabilizar. "
-							+ "\nAñade personajes para poder ver cuántos hay.",
-							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuNombreP.addActionListener(new ActionListener() { // BUSCAR PESONAJE POR NOMBRE
-			public void actionPerformed(ActionEvent e) {
-				if(General.personajes.cantidadPersonajes() != 0){
-					BuscarPorNombre buscar = new BuscarPorNombre();
-					buscar.setVisible(true);
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"Oops... No hay personajes que buscar. "
-							+ "\nAñade personajes para poder buscarlos.",
-							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuEliminarP.addActionListener(new ActionListener() {
+		menuEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // ELIMINAR PERSONAJE
 				
 				if(General.personajes.cantidadPersonajes() != 0){
@@ -627,205 +409,34 @@ public class Principal {
 			}
 		});
 		
-				
-		// ----------------------------------- Menú Mago ----------------------------------- \\
-		
-		// ---- Añadir Menús ---- \\
-		
-		menuBarra.add(menuMago);
-		menuMago.setFont(new Font("Candara", Font.BOLD, 14));
-		menuMago.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
-		
-		menuBuscarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
-		menuMago.add(menuBuscarM);
-		
-		menuBuscarM.add(menuNombreM);
-		menuNombreM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-				
-		menuBuscarM.add(menuSexoM);
-		menuSexoM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		
-		menuRegionM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarM.add(menuRegionM);
-				
-		menuZodiacoM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarM.add(menuZodiacoM);
-		
-		menuRazaM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
-		menuBuscarM.add(menuRazaM);
-		
-		menuMostrarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuMago.add(menuMostrarM);
-		
-		menuTotalM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuMago.add(menuTotalM);
-		
-		// ---- Añadir Teclas de Acceso Rápido ---- \\
-		
-		menuMago.setMnemonic('M');
-		menuNombreM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
-		menuSexoM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
-		menuRegionM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_MASK));	
-		menuZodiacoM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK));
-		menuMostrarM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK));
-		menuTotalM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
-		
-		menuSexoM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { 
-				if(General.personajes.cantidadPersonajes() != 0) {
-					
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"El listado está vacío. \nAñade personajes para poder buscarlos.",
-							"Listado vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuMostrarM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { // Abre la ventana Mostrar Listado
-				if(General.personajes.cantidadPersonajes() != 0) {
-					
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"El listado está vacío. \nAñade personajes para poder verlos.",
-							"Listado vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuTotalM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { // Abre la ventana de total disponible
-				if(General.personajes.cantidadPersonajes() != 0) {
-					Total total = new Total();
-					total.setVisible(true);
-				}
-				else
-					JOptionPane.showMessageDialog(panelContenedor, 
-							"No hay personajes en el listado. \nAñade personajes para poder saber cuántos hay.",
-							"Listado vacío", JOptionPane.ERROR_MESSAGE);
-			}
-		});
-		
-		menuNombreM.addActionListener(new ActionListener() { // Abre la ventana de Buscar por nombre
+		menuBuscarN.addActionListener(new ActionListener() { // BUSCAR PESONAJE POR NOMBRE
 			public void actionPerformed(ActionEvent e) {
-				if(General.personajes.cantidadPersonajes() != 0) {
-					
+				if(General.personajes.cantidadPersonajes() != 0){
+					BuscarPorNombre buscar = new BuscarPorNombre();
+					buscar.setVisible(true);
 				}
 				else
 					JOptionPane.showMessageDialog(panelContenedor, 
-							"El listado está vacío. \nAñade personajes para poder buscarlos.",
-							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+							"Oops... No hay personajes que buscar. "
+							+ "\nAñade personajes para poder buscarlos.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
 			}
-		});	
+		});
 		
-		
-		// ----------------------------------- Menú Arquero ----------------------------------- \\
-		
-		// ---- Añadir Menús ---- \\
-				
-		menuArquero.setFont(new Font("Candara", Font.BOLD, 14));
-		menuArquero.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
-		menuBarra.add(menuArquero);
-		
-		menuBuscarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
-		menuArquero.add(menuBuscarA);
-		
-		menuNombreA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-		menuBuscarA.add(menuNombreA);
-		
-		menuSexoA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		menuBuscarA.add(menuSexoA);
-		
-		menuRegionA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarA.add(menuRegionA);
-		
-		menuZodiacoA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarA.add(menuZodiacoA);
-		
-		menuRazaA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
-		menuBuscarA.add(menuRazaA);
-				
-		menuMostrarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuArquero.add(menuMostrarA);
-		
-		
-		menuTotalA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuArquero.add(menuTotalA);
-		
-		// ---- Añadir Teclas de Acceso Rápido ---- \\
-		
-		menuArquero.setMnemonic('A');
-				
-		// ----------------------------------- Menú Guerrero ----------------------------------- \\
-		
-		// ---- Añadir Menús ---- \\
-		
-		menuGuerrero.setFont(new Font("Candara", Font.BOLD, 14));
-		menuGuerrero.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
-		menuBarra.add(menuGuerrero);
-		
-		menuBuscarG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
-		menuGuerrero.add(menuBuscarG);
-		
-		menuNombreG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-		menuBuscarG.add(menuNombreG);
-		
-		menuSexoG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		menuBuscarG.add(menuSexoG);
-		
-		menuRegionG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarG.add(menuRegionG);
-		
-		menuZodiacoG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarG.add(menuZodiacoG);
-		
-		menuRazaG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/elf3.png")));
-		menuBuscarG.add(menuRazaG);
-		
-		menuMostrarG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuGuerrero.add(menuMostrarG);
-		
-		menuTotalG.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuGuerrero.add(menuTotalG);
-		
-		// ---- Añadir Teclas de Acceso Rápido ---- \\
-				
-		menuGuerrero.setMnemonic('G');
-		
-		// ----------------------------------- Menú Dragón ----------------------------------- \\
-		
-		// ---- Añadir Menús ---- \\
-		
-		menuDragon.setFont(new Font("Candara", Font.BOLD, 14));
-		menuDragon.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
-		menuBarra.add(menuDragon);
-		
-		menuBuscarD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
-		menuDragon.add(menuBuscarD);
-		
-		menuNombreD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
-		menuBuscarD.add(menuNombreD);
-		
-		menuSexoD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
-		menuBuscarD.add(menuSexoD);
-		
-		menuRegionD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/System_Map_Icon_16.png")));
-		menuBuscarD.add(menuRegionD);
-		
-		menuZodiacoD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/pisces10.png")));
-		menuBuscarD.add(menuZodiacoD);
-		
-		menuMostrarD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/view24.png")));
-		menuDragon.add(menuMostrarD);
-		
-		menuTotalD.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/equal4.png")));
-		menuDragon.add(menuTotalD);
-		
-		// ---- Añadir Teclas de Acceso Rápido ---- \\
-		
-		menuDragon.setMnemonic('D');
-		
+		menuMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0){
+					Mostrar mostrar = new Mostrar();
+					mostrar.setVisible(true);
+				}
+				else
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay personajes que contabilizar. "
+							+ "\nAñade personajes para poder ver cuántos hay.",
+							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+			
 		
 		// ----------------------------------- Menú Ayuda ----------------------------------- \\
 		
@@ -852,8 +463,8 @@ public class Principal {
 			
 		menuVerAyuda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // Abre la ventana Ayuda
-				Ayuda ayuda = new Ayuda();
-				ayuda.setVisible(true);
+				//Ayuda2 ayuda = new Ayuda2();
+				//ayuda.setVisible(true);
 			}
 		});
 		
@@ -948,5 +559,4 @@ public class Principal {
 			JOptionPane.showMessageDialog(panelContenedor, "No se pudo crear un archivo nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
-	
 }

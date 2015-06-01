@@ -37,30 +37,9 @@ public class BuscarPorNombre extends VentanaPadre {
 	 * Create the dialog.
 	 */
 	public BuscarPorNombre() {
+		
 		botonOK.setText("Buscar");
 		apellidoCampo.setEditable(false);
-		
-		botonOK.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				getPersonaje(nombreCampo, apellidoCampo, edadCampo, 
-				alturaCampo, pesoCampo,panelContenedor, sexoComboBox, 
-				zodiacoComboBox, regionComboBox, razaComboBox, magoRB, 
-				arqueroRB, guerreroRB, dragonRB, diosRB, descripcionCampo);
-			}
-		});
-		
-		nombreCampo.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				nombreCampo.setForeground(java.awt.Color.BLACK);
-			}
-			@Override // El campo del nombre se pone en rojo si está mal al perder el foco
-			public void focusLost(FocusEvent e) {
-				if(!Personaje.esValido(Personaje.getPatronNombre() ,nombreCampo.getText()))
-					nombreCampo.setForeground(java.awt.Color.RED);
-			}
-		});
-		
 		edadCampo.setEditable(false);
 		descripcionCampo.setEditable(false);
 		pesoCampo.setEditable(false);
@@ -80,6 +59,32 @@ public class BuscarPorNombre extends VentanaPadre {
 		setTitle("Buscar por nombre");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarPorNombre.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));
 		setBounds(100, 100, 604, 504);
+		
+		// Acción del botón Buscar: Muestra el personaje
+		
+		botonOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				getPersonaje(nombreCampo, apellidoCampo, edadCampo, 
+				alturaCampo, pesoCampo,panelContenedor, sexoComboBox, 
+				zodiacoComboBox, regionComboBox, razaComboBox, magoRB, 
+				arqueroRB, guerreroRB, dragonRB, diosRB, descripcionCampo);
+			}
+		});
+		
+		// Acciones según se gane o pierda el foco en el campo Nombre
+		
+		nombreCampo.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				nombreCampo.setForeground(java.awt.Color.BLACK);
+			}
+			@Override // El campo del nombre se pone en rojo si está mal al perder el foco
+			public void focusLost(FocusEvent e) {
+				if(!Personaje.esValido(Personaje.getPatronNombre() ,nombreCampo.getText()))
+					nombreCampo.setForeground(java.awt.Color.RED);
+			}
+		});
+				
 	}
 
 	/**
@@ -141,7 +146,7 @@ public class BuscarPorNombre extends VentanaPadre {
 				razaComboBox.setSelectedItem(((Guerrero) personaje).getRaza());
 			}
 			
-			JOptionPane.showMessageDialog(panelContenedor, "Coche encontrado con éxito.", "Acción realizada", 
+			JOptionPane.showMessageDialog(panelContenedor, "Personaje encontrado con éxito.", "Acción realizada", 
 					JOptionPane.INFORMATION_MESSAGE);
 		} catch (PersonajeNoExisteException | NombreNoValidoException e) {
 			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
