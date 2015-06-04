@@ -132,11 +132,13 @@ public class Personaje implements Serializable {
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
+	 * @throws NullPointerException Error por dato nulo.
 	 */
 	protected Personaje(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco, 
 			int edad, double altura, double peso, Region region, String descripcion) 
 			throws ApellidoNoValidoException, NombreNoValidoException,  
-			AlturaNoValidaException, PesoNoValidoException,  EdadNoValidaException {
+			AlturaNoValidaException, PesoNoValidoException,  
+			NullPointerException, EdadNoValidaException {
 		setNombre(nombre);
 		setApellido(apellido);
 		setSexo(sexo);
@@ -153,8 +155,9 @@ public class Personaje implements Serializable {
 	 * 
 	 * @param nombre Nombre del personaje.
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
+	 * @throws NullPointerException Error por nombre nulo.
 	 */
-	protected Personaje(String nombre) throws NombreNoValidoException {
+	protected Personaje(String nombre) throws NombreNoValidoException, NullPointerException {
 		setNombre(nombre);
 	}
 	
@@ -238,12 +241,16 @@ public class Personaje implements Serializable {
 	 * @param nombre Nombre del personaje.
 	 * 
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
+	 * @throws NullPointerException Error por nombre nulo.
 	 */
-	protected void setNombre(String nombre) throws NombreNoValidoException {
+	protected void setNombre(String nombre) throws NombreNoValidoException, NullPointerException {
 		if(esValido(patronNombre, nombre) && nombre.length()<15)
 			this.nombre = nombre;
+		else if(nombre==null)
+			throw new NullPointerException("El nombre es nulo.");
 		else
 			throw new NombreNoValidoException("El nombre no es válido.");
+		
 	}
 	
 	/**
@@ -261,10 +268,13 @@ public class Personaje implements Serializable {
 	 * @param apellido Apellido del personaje.
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto.
+	 * @throws NullPointerException Error por nombre nulo.
 	 */
-	protected void setApellido(String apellido) throws ApellidoNoValidoException {
+	protected void setApellido(String apellido) throws ApellidoNoValidoException, NullPointerException {
 		if(esValido(patronApellido, apellido) && nombre.length()<15)
 			this.apellido = apellido;
+		else if(apellido==null)
+			throw new NullPointerException("El apellido es nulo.");
 		else
 			throw new ApellidoNoValidoException("El apellido no es válido.");
 	}
@@ -363,7 +373,7 @@ public class Personaje implements Serializable {
 	 * @return El nombre.
 	 */
 	public String getNombre() {
-		return null;
+		return nombre;
 	}
 	
 	/**
@@ -372,7 +382,7 @@ public class Personaje implements Serializable {
 	 * @return El apellido.
 	 */
 	public String getApellido() {
-		return null;
+		return apellido;
 	}
 
 	/**

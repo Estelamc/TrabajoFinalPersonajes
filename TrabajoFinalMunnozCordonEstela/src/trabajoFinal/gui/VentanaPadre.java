@@ -251,39 +251,31 @@ public class VentanaPadre extends JDialog {
 		getContentPane().add(panelContenedor, BorderLayout.CENTER);
 		panelContenedor.setLayout(null);
 		
-		// Campo nombre
-		nombreCampo.setColumns(10);
-		nombreCampo.setBounds(113, 23, 165, 20);
-		panelContenedor.add(nombreCampo);
-		
-		// Etiqueta nombre
-		nombreEtiqueta.setBounds(42, 26, 68, 13);
-		panelContenedor.add(nombreEtiqueta);
-		
 		// Panel de tipos
 		tipoPanel.setLayout(null);
 		tipoPanel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Personajes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		tipoPanel.setBounds(23, 57, 129, 152);
 		panelContenedor.add(tipoPanel);
-		iconoA.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
-		iconoA.setBounds(93, 42, 21, 23);
-		tipoPanel.add(iconoA);
+		iconoM.setBounds(93, 16, 21, 23);
+		tipoPanel.add(iconoM);
+		iconoM.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
 		iconoI.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Priest_1_Icon_16.png")));
 		iconoI.setBounds(93, 120, 21, 23);
 		
 		tipoPanel.add(iconoI);
-		iconoG.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
-		iconoG.setBounds(93, 68, 21, 23);
-		
-		tipoPanel.add(iconoG);
-		iconoM.setBounds(93, 16, 21, 23);
-		tipoPanel.add(iconoM);
-		iconoM.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
 		iconoD.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
 		iconoD.setBounds(93, 94, 21, 23);
 		
 		tipoPanel.add(iconoD);
+		iconoG.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Warrior_1_Icon_16.png")));
+		iconoG.setBounds(93, 68, 21, 23);
+		
+		tipoPanel.add(iconoG);
+		iconoA.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
+		iconoA.setBounds(93, 42, 21, 23);
+		tipoPanel.add(iconoA);
 		tipoGrupo.add(magoRB);
+		magoRB.setOpaque(false);
 		
 		// mago
 		magoRB.setForeground(new Color(0, 0, 128));
@@ -291,6 +283,7 @@ public class VentanaPadre extends JDialog {
 		magoRB.setBounds(6, 16, 109, 23);
 		tipoPanel.add(magoRB);
 		tipoGrupo.add(arqueroRB);
+		arqueroRB.setOpaque(false);
 		
 		// arquero
 		arqueroRB.setForeground(SystemColor.controlDkShadow);
@@ -298,13 +291,7 @@ public class VentanaPadre extends JDialog {
 		arqueroRB.setBounds(6, 42, 109, 23);
 		tipoPanel.add(arqueroRB);
 		tipoGrupo.add(guerreroRB);
-		/*guerreroRB.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				razaComboBox.setVisible(true);
-				iconoRaza.setVisible(true);
-				razaEtiqueta.setVisible(true);
-			}
-		});*/
+		guerreroRB.setOpaque(false);
 		
 		// guerrero
 		guerreroRB.setForeground(new Color(165, 42, 42));
@@ -314,6 +301,7 @@ public class VentanaPadre extends JDialog {
 		
 		// dragón
 		tipoGrupo.add(dragonRB);
+		dragonRB.setOpaque(false);
 		dragonRB.addFocusListener(new FocusAdapter() {
 			@Override // Al seleccionarse no se ve la raza
 			public void focusGained(FocusEvent arg0) {
@@ -335,6 +323,7 @@ public class VentanaPadre extends JDialog {
 		
 		// dios
 		tipoGrupo.add(diosRB);
+		diosRB.setOpaque(false);
 		diosRB.addFocusListener(new FocusAdapter() {
 			@Override // Al seleccionarse no se ve la raza
 			public void focusGained(FocusEvent e) {
@@ -353,6 +342,15 @@ public class VentanaPadre extends JDialog {
 		diosRB.setFont(new Font("Tahoma", Font.BOLD, 11));
 		diosRB.setBounds(6, 120, 109, 23);
 		tipoPanel.add(diosRB);
+		
+		// Campo nombre
+		nombreCampo.setColumns(10);
+		nombreCampo.setBounds(113, 23, 165, 20);
+		panelContenedor.add(nombreCampo);
+		
+		// Etiqueta nombre
+		nombreEtiqueta.setBounds(42, 26, 68, 13);
+		panelContenedor.add(nombreEtiqueta);
 		
 		// Etiqueta sexo
 		sexoEtiqueta.setBounds(181, 65, 46, 14);

@@ -73,12 +73,13 @@ public class Guerrero extends Personaje implements Razable {
 	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
 	 * @throws RazaNoValidaException Error por raza incorrecta.
+	 * @throws NullPointerException Error por dato nulo.
 	 */
 	public Guerrero(String nombre, String apellido, Sexo sexo,
 			Zodiaco zodiaco, int edad, double altura, double peso, Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			EdadNoValidaException {
+			EdadNoValidaException, NullPointerException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 		setRaza(raza);
 	}

@@ -82,13 +82,14 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 	 *             Error por edad incorrecta.
 	 * @throws PersonajeYaExisteException
 	 *             Error al existir el personaje.
+	 * @throws NullPointerException Error por dato nulo.             
 	 */
 	public boolean annadir(Tipo tipo, String nombre, String apellido,
 			Sexo sexo, Zodiaco zodiaco, int edad, double altura, double peso,
 			Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			EdadNoValidaException, PersonajeYaExisteException {
+			EdadNoValidaException, PersonajeYaExisteException, NullPointerException {
 
 		Personaje personaje = null;
 
@@ -118,7 +119,8 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 		if (listado.contains(personaje)) // Si ya lo contiene, crea la excepción
 			throw new PersonajeYaExisteException(
 					"El personaje ya existe en el listado");
-	
+		//System.out.println(personaje.getNombre());
+		//System.out.println(personaje.getApellido());
 		// Si no lo contiene
 		return listado.add(personaje);
 
@@ -138,18 +140,19 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 	 *             Error por nombre incorrecto.
 	 * @throws PersonajeNoExisteException
 	 *             Error por no existir el personaje.
+	 * @throws NullPointerException Error por nombre nulo.
 	 */
 	public boolean eliminar(String nombre) throws NombreNoValidoException,
-			PersonajeNoExisteException {
+			PersonajeNoExisteException, NullPointerException {
 		
 		Personaje personaje = new Personaje(nombre); // Crea un personaje con
 		
-		if (listado.contains(personaje)) 
+		//if (listado.contains(personaje)) 
 			// Si lo contiene, Borra el personaje
 			return listado.remove(personaje); 
-		else // Si no lo contiene, crea la excepción
+		/*else // Si no lo contiene, crea la excepción
 			throw new PersonajeNoExisteException(
-				"El personaje no existe en el listado");	
+				"El personaje no existe en el listado");	*/
 				
 	}
 
@@ -167,12 +170,13 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 	 *             Error al no existir el personaje.
 	 * @throws NombreNoValidoException
 	 *             Error por nombre incorrecto.
+	 * @throws NullPointerException Error por nombre nulo.
 	 */
 	public Personaje getPersonaje(String nombre)
-			throws PersonajeNoExisteException, NombreNoValidoException {
+			throws PersonajeNoExisteException, NombreNoValidoException, NullPointerException {
 		
 		Personaje personaje = new Personaje(nombre); // Crea un personaje sólo
-														// con la nombre
+														// con el nombre
 		int posicion = listado.indexOf(personaje); // Posición del personaje en
 													// el listado
 		if (posicion != -1) // Cuando no es -1, desvuelve el personaje que

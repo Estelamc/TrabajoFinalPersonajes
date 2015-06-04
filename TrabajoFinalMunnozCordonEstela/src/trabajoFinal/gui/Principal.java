@@ -192,6 +192,7 @@ public class Principal {
 	 */
 	private JLabel imagen = new JLabel("", new ImageIcon(Principal.class.getResource(
 			"/trabajoFinal/gui/imagenes/Groups_Icon_256.png")), JLabel.CENTER);
+	private final JMenuItem menuModificar = new JMenuItem("Modificar");
 			
 		
 	// ------------------------------------------------------------------------------------------ \\
@@ -346,16 +347,20 @@ public class Principal {
 			
 		menuEliminar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
 		menuPersonaje.add(menuEliminar);
+		menuModificar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Edit_Male_User_Icon_16.png")));
+		menuModificar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK | InputEvent.ALT_MASK));
+		
+		menuPersonaje.add(menuModificar);
 		
 		menuBuscarN.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));		
 		menuPersonaje.add(menuBuscarN);
 				
 		menuBuscarP.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Search_Icon_16.png")));
 		menuPersonaje.add(menuBuscarP);
-				
+						
 		menuBuscarM.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
 		menuBuscarP.add(menuBuscarM);
-				
+						
 		menuBuscarA.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Scout_1_Icon_16.png")));
 		menuBuscarP.add(menuBuscarA);
 				
@@ -423,6 +428,76 @@ public class Principal {
 			}
 		});
 		
+		menuBuscarM.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0 || General.personajes.getMagos().size() != 0){
+					BuscarMagos mostrarMagos = new BuscarMagos();
+					mostrarMagos.setVisible(true);
+				}			
+				else 
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay magos que mostrar. "
+							+ "\nAñade magos para poder verlos.",
+							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		menuBuscarA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0 || General.personajes.getArqueros().size() != 0){
+					BuscarArqueros buscarArqueros = new BuscarArqueros();
+					buscarArqueros.setVisible(true);
+				}
+				else 
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay arqueros que mostrar. "
+							+ "\nAñade arqueros para poder verlos.",
+							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		menuBuscarG.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0 || General.personajes.getGuerreros().size() != 0){
+					BuscarGuerreros buscarGuerreros = new BuscarGuerreros();
+					buscarGuerreros.setVisible(true);
+				}
+				else 
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay guerreros que mostrar. "
+							+ "\nAñade guerreros para poder verlos.",
+							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		menuBuscarDr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0 || General.personajes.getDragones().size() != 0){
+					BuscarDragones buscarDragones = new BuscarDragones();
+					buscarDragones.setVisible(true);
+				}
+				else 
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay dragones que mostrar. "
+							+ "\nAñade dragones para poder verlos.",
+							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		menuBuscarD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(General.personajes.cantidadPersonajes() != 0 || General.personajes.getDioses().size() != 0){
+					BuscarDioses buscarDioses = new BuscarDioses();
+					buscarDioses.setVisible(true);
+				}
+				else 
+					JOptionPane.showMessageDialog(panelContenedor, 
+							"Oops... No hay dioses que mostrar. "
+							+ "\nAñade dioses para poder verlos.",
+							"Listado vacío", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
 		menuMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(General.personajes.cantidadPersonajes() != 0){
@@ -431,8 +506,8 @@ public class Principal {
 				}
 				else
 					JOptionPane.showMessageDialog(panelContenedor, 
-							"Oops... No hay personajes que contabilizar. "
-							+ "\nAñade personajes para poder ver cuántos hay.",
+							"Oops... No hay personajes que mostrar. "
+							+ "\nAñade personajes para poder verlos.",
 							"Listado de personajes vacío", JOptionPane.ERROR_MESSAGE);
 			}
 		});

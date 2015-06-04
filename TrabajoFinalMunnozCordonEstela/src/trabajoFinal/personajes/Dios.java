@@ -78,12 +78,13 @@ public class Dios extends Personaje {
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
+	 * @throws NullPointerException Error por dato nulo.
 	 */
 	public Dios(String nombre, String apellido, Sexo sexo, Zodiaco zodiaco,
 			int edad, double altura, double peso, Region region, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			EdadNoValidaException {
+			EdadNoValidaException, NullPointerException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 	}
 	
