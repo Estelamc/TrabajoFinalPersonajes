@@ -123,8 +123,6 @@ public class Mago extends Personaje implements Razable {
 	 * Modifica la raza del mago.
 	 * 
 	 * @param raza Raza del mago.
-	 * 
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 */
 	private void setRaza(Raza raza) {
 		this.raza = raza;

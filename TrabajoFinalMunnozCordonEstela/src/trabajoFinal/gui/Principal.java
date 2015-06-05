@@ -192,7 +192,6 @@ public class Principal {
 	 */
 	private JLabel imagen = new JLabel("", new ImageIcon(Principal.class.getResource(
 			"/trabajoFinal/gui/imagenes/Groups_Icon_256.png")), JLabel.CENTER);
-	private final JMenuItem menuModificar = new JMenuItem("Modificar");
 			
 		
 	// ------------------------------------------------------------------------------------------ \\
@@ -201,6 +200,9 @@ public class Principal {
 	
 	/**
 	 * Carga la aplicaci&oacute;n.
+	 * 
+	 * @param args Lista de argumentos que hacen funcionar
+	 * la apliaci&oacute;n.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -347,10 +349,6 @@ public class Principal {
 			
 		menuEliminar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
 		menuPersonaje.add(menuEliminar);
-		menuModificar.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/Edit_Male_User_Icon_16.png")));
-		menuModificar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK | InputEvent.ALT_MASK));
-		
-		menuPersonaje.add(menuModificar);
 		
 		menuBuscarN.setIcon(new ImageIcon(Principal.class.getResource("/trabajoFinal/gui/imagenes/N_Icon_16.png")));		
 		menuPersonaje.add(menuBuscarN);

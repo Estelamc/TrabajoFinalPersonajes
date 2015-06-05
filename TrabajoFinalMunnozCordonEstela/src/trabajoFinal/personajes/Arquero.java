@@ -58,7 +58,7 @@ public class Arquero extends Personaje implements Razable {
 	 * @param peso Peso del arquero.
 	 * @param region Regi&oacute;n donde vive el arquero.
 	 * @param raza Raza del arquero.
-	 * @param String descripcion Informaci&oacute;n del arquero.
+	 * @param descripcion Informaci&oacute;n del arquero.
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto. 
 	 * @throws NombreNoValidoException Error por nombre incorrecto.

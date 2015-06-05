@@ -66,13 +66,9 @@ public class Guerrero extends Personaje implements Razable {
 	 * 
 	 * @throws ApellidoNoValidoException Error por apellido incorrecto. 
 	 * @throws NombreNoValidoException Error por nombre incorrecto.
-	 * @throws RegionNoValidaException Error por regi&oacute;n incorrecta.
-	 * @throws SexoNoValidoException Error por sexo incorrecto.
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
-	 * @throws ZodiacoNoValidoException Error por signo del zodiaco incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
-	 * @throws RazaNoValidaException Error por raza incorrecta.
 	 * @throws NullPointerException Error por dato nulo.
 	 */
 	public Guerrero(String nombre, String apellido, Sexo sexo,

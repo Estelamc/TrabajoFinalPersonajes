@@ -14,6 +14,8 @@ import trabajoFinal.personajes.Personaje;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 /**
  * Muestra todos los personajes del listado.
@@ -41,6 +43,11 @@ public class Mostrar extends VentanaPadre {
 	 * Bot&oacute;n para ver el personaje siguiente del listado.
 	 */
 	private JButton botonSiguiente = new JButton(">");
+	
+	/**
+	 * Etiqueta que muestra el total de personajes del listado.
+	 */
+	private JLabel totalEtiqueta = new JLabel("");
 
 	/**
 	 * &Iacute;ndice identificador del personaje para 
@@ -78,10 +85,16 @@ public class Mostrar extends VentanaPadre {
 		setTitle("Mostrar");
 		setBounds(100, 100, 604, 496);
 		botonOK.setVisible(false);
+		totalEtiqueta.setHorizontalAlignment(SwingConstants.RIGHT);
+		totalEtiqueta.setHorizontalTextPosition(SwingConstants.LEFT);
+		totalEtiqueta.setBounds(264, 199, 307, 28);
+		panelContenedor.add(totalEtiqueta);
 		
 		botonAnterior.setEnabled(false);		
 		botonesPanel.add(botonAnterior);
 		botonesPanel.add(botonSiguiente);
+		
+		totalEtiqueta.setText("Hay " + General.personajes.cantidadPersonajes() + " personajes.");
 		
 		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
 		
@@ -167,6 +180,6 @@ public class Mostrar extends VentanaPadre {
 			guerreroRB.setSelected(true);
 			razaComboBox.setSelectedItem(((Guerrero) personaje).getRaza());
 		}
-		panelContenedor.setLayout(null);
+		panelContenedor.setLayout(null);		
 	}
 }
