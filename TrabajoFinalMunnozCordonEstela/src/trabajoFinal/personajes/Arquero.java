@@ -65,12 +65,13 @@ public class Arquero extends Personaje implements Razable {
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 * @throws PesoNoValidoException Error por peso incorrecto.
 	 * @throws EdadNoValidaException Error por edad incorrecta.
+	 * @throws NullPointerException Error por dato nulo.
 	 */
 	protected Arquero(String nombre, String apellido, Sexo sexo,
 			Zodiaco zodiaco, int edad, double altura, double peso, Region region, 
 			Raza raza, String descripcion)	throws ApellidoNoValidoException, 
 			NombreNoValidoException, AlturaNoValidaException, 
-			PesoNoValidoException, EdadNoValidaException {
+			PesoNoValidoException, EdadNoValidaException, NullPointerException {
 		super(nombre, apellido, sexo, zodiaco, edad, altura, peso, region, descripcion);
 		setRaza(raza);
 	}

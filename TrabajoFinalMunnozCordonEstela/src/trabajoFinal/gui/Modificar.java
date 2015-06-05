@@ -24,28 +24,28 @@ import trabajoFinal.personajes.Tipo;
 import trabajoFinal.personajes.Zodiaco;
 
 /**
- * Ventana que a&ntilde;ade un personaje al listado.
+ * Ventana que modifica un personaje al listado.
  * 
  * @author Estela Mu&ntilde;oz Cord&oacute;n
  * @version 1.0 
  *
  */
 
-public class Annadir extends VentanaPadre {
+public class Modificar extends VentanaPadre {
 
 	/**
 	 * Identificador de versi&oacute;n.
 	 */
-	private static final long serialVersionUID = -6537750238897758360L;
+	private static final long serialVersionUID = -4259238904455406661L;
 
 	/**
 	 * Crea la ventana de di&aacute;logo.
 	 */
-	public Annadir() {
-		botonOK.setText("A\u00F1adir");
+	public Modificar() {
+		botonOK.setText("Modificar");
 		setBounds(100, 100, 604, 496);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Annadir.class.getResource("/trabajoFinal/gui/imagenes/Add_1_Icon_16.png")));
-		setTitle("A\u00F1adir");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Modificar.class.getResource("/trabajoFinal/gui/imagenes/Edit_Male_User_Icon_16.png")));
+		setTitle("Modificar");
 		
 		nombreCampo.addFocusListener(new FocusAdapter() {
 			@Override

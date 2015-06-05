@@ -127,11 +127,9 @@ public class BuscarPorNombre extends VentanaPadre {
 			descripcionCampo.setText(personaje.getDescripcion());
 			if(personaje instanceof Dios){
 				diosRB.setSelected(true);
-				razaComboBox.setVisible(false);
 			}
 			else if(personaje instanceof Dragon){
 				dragonRB.setSelected(true);
-				razaComboBox.setVisible(false);
 			}
 			else if(personaje instanceof Mago){
 				magoRB.setSelected(true);
@@ -148,7 +146,7 @@ public class BuscarPorNombre extends VentanaPadre {
 			
 			JOptionPane.showMessageDialog(panelContenedor, "Personaje encontrado con éxito.", "Acción realizada", 
 					JOptionPane.INFORMATION_MESSAGE);
-		} catch (PersonajeNoExisteException | NombreNoValidoException e) {
+		} catch (PersonajeNoExisteException | NombreNoValidoException | NullPointerException e) {
 			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
