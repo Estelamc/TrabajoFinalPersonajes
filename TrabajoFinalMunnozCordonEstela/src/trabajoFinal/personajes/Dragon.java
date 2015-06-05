@@ -58,8 +58,8 @@ public class Dragon extends Personaje {
 	 * @param nombre Nombre del drag&oacute;n.
 	 * @param apellido Apellido del drag&oacute;n.
 	 * @param sexo Sexo del drag&oacute;n.
-	 * @param zodiaco
-	 * @param edad
+	 * @param zodiaco Zodiaco del drag&oacute;n.
+	 * @param edad Edad del drag&oacute;n.
 	 * @param altura Altura del drag&oacute;n.
 	 * @param peso Peso del drag&oacute;n.
 	 * @param region Regi&oacute;n donde vive el drag&oacute;n.

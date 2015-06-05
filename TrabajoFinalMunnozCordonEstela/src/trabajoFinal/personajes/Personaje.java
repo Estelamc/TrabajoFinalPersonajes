@@ -81,7 +81,7 @@ public class Personaje implements Serializable, Comparable<Personaje> {
 	 * Patr&oacute;n para comparar el nombre y saber si es v&aacute;lido.
 	 * La primera letra debe ser en may&uacute;scula, puede ir seguida de otra letra min&uacute;scula o m&aacute;s
 	 * y un gui&oacute;n seguido de una letra may&uacute;scula (en caso de que fueran nombres compuestos tipo Iz-Kod),
-	 * a esto seguir&aacute;n como m&iacute;nimo dos letras min&uacute;sculas.</br></br>
+	 * a esto seguir&aacute;n como m&iacute;nimo dos letras min&uacute;sculas.<br><br>
 	 * Ejemplos permitidos:
 	 * <ul>
 	 * 	<li> Rock-Naut.</li>
@@ -90,7 +90,7 @@ public class Personaje implements Serializable, Comparable<Personaje> {
 	 * 	<li> Nora.</li>
 	 * 	<li> Nel.</li>
 	 * </ul>
-	 * </br>
+	 * <br>
 	 * Ejemplos no permitidos:
 	 * <ul>
 	 * 	<li> A.</li>
@@ -99,7 +99,7 @@ public class Personaje implements Serializable, Comparable<Personaje> {
 	 * 	<li> Liun-mul.</li>
 	 * 	<li> AAl</li>
 	 *  <li> Ali4 </li>
-	 *  <li> 4Ana </li> // no permites números en ninguna parte
+	 *  <li> 4Ana </li> 
 	 *  <li> 
 	 * </ul>
 	 * 

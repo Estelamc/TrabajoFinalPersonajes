@@ -67,7 +67,7 @@ public class Gestion {
 	/**
 	 * Crea un archivo nuevo vac&iacute;o.
 	 * 
-	 * @throws IOException 
+	 * @throws IOException Error por fallo o interrupci&oacute;n de entrada o salida de datos.
 	 * 
 	 */
 	public static void nuevo() throws IOException {
