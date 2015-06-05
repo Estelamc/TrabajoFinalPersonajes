@@ -82,6 +82,8 @@ public class BuscarDioses extends VentanaPadre {
 		botonSiguiente.setEnabled(false);
 		botonesPanel.add(botonSiguiente);
 		
+		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
+		
 		// Empezando desde 0 (ya después le daremos a los botones)
 		
 		//mostrar(magos.getPersonajePorPosicion(indice));		
@@ -147,7 +149,9 @@ public class BuscarDioses extends VentanaPadre {
 		zodiacoComboBox.setSelectedItem(personaje.getZodiaco());
 		regionComboBox.setSelectedItem(personaje.getRegion());
 		diosRB.setSelected(true);
-		razaComboBox.setVisible(false);		
+		razaComboBox.setVisible(false);	
+		iconoRaza.setVisible(false);
+		razaEtiqueta.setVisible(false);
 		panelContenedor.setLayout(null);
 	}
 	

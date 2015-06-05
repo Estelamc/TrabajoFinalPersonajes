@@ -3,11 +3,13 @@ package trabajoFinal.gui;
 import java.awt.Toolkit;
 
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+
 import trabajoFinal.personajes.Arquero;
 import trabajoFinal.personajes.Dios;
 import trabajoFinal.personajes.Dragon;
@@ -21,6 +23,7 @@ import trabajoFinal.personajes.Raza;
 import trabajoFinal.personajes.Region;
 import trabajoFinal.personajes.Sexo;
 import trabajoFinal.personajes.Zodiaco;
+
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.ActionListener;
@@ -29,7 +32,7 @@ import java.awt.event.ActionEvent;
 public class BuscarPorNombre extends VentanaPadre {
 
 	/**
-	 * 
+	 * Identificador de versi&oacute;n.
 	 */
 	private static final long serialVersionUID = 7187269644725782668L;
 
@@ -67,7 +70,8 @@ public class BuscarPorNombre extends VentanaPadre {
 				getPersonaje(nombreCampo, apellidoCampo, edadCampo, 
 				alturaCampo, pesoCampo,panelContenedor, sexoComboBox, 
 				zodiacoComboBox, regionComboBox, razaComboBox, magoRB, 
-				arqueroRB, guerreroRB, dragonRB, diosRB, descripcionCampo);
+				arqueroRB, guerreroRB, dragonRB, diosRB, descripcionCampo,
+				iconoRaza, razaEtiqueta);
 			}
 		});
 		
@@ -106,11 +110,14 @@ public class BuscarPorNombre extends VentanaPadre {
 	 * @param dragonRB Drag&oacute;n.
 	 * @param diosRB Dios.
 	 * @param descripcionCampo Descripci&oacute;n del personaje.
+	 * @param iconoRaza Etiqueta que contiene el icono que representa a la raza.
+	 * @param razaEtiqueta Etiqueta que muestra el texto &quot;Raza&quot;
 	 */
 	private static void getPersonaje(JTextField nombreCampo, JTextField apellidoCampo, JTextField edadCampo, 
 			JTextField alturaCampo, JTextField pesoCampo, JPanel panelContenedor, JComboBox<Sexo> sexoComboBox, 
-			JComboBox<Zodiaco> zodiacoComboBox, JComboBox<Region> regionComboBox, JComboBox<Raza> razaComboBox, JRadioButton magoRB, 
-			JRadioButton arqueroRB, JRadioButton guerreroRB, JRadioButton dragonRB, JRadioButton diosRB, JTextPane descripcionCampo) {
+			JComboBox<Zodiaco> zodiacoComboBox, JComboBox<Region> regionComboBox, JComboBox<Raza> razaComboBox, 
+			JRadioButton magoRB, JRadioButton arqueroRB, JRadioButton guerreroRB, JRadioButton dragonRB, 
+			JRadioButton diosRB, JTextPane descripcionCampo, JLabel iconoRaza, JLabel razaEtiqueta) {
 		Personaje personaje = null;
 		// Obtiene un personaje del listado por su nombre y de él obtiene el resto de campos
 		try {
@@ -127,9 +134,15 @@ public class BuscarPorNombre extends VentanaPadre {
 			descripcionCampo.setText(personaje.getDescripcion());
 			if(personaje instanceof Dios){
 				diosRB.setSelected(true);
+				razaComboBox.setVisible(false);
+				iconoRaza.setVisible(false);
+				razaEtiqueta.setVisible(false);
 			}
 			else if(personaje instanceof Dragon){
 				dragonRB.setSelected(true);
+				razaComboBox.setVisible(false);
+				iconoRaza.setVisible(false);
+				razaEtiqueta.setVisible(false);
 			}
 			else if(personaje instanceof Mago){
 				magoRB.setSelected(true);
@@ -142,8 +155,7 @@ public class BuscarPorNombre extends VentanaPadre {
 			else if(personaje instanceof Guerrero){
 				guerreroRB.setSelected(true);
 				razaComboBox.setSelectedItem(((Guerrero) personaje).getRaza());
-			}
-			
+			}			
 			JOptionPane.showMessageDialog(panelContenedor, "Personaje encontrado con éxito.", "Acción realizada", 
 					JOptionPane.INFORMATION_MESSAGE);
 		} catch (PersonajeNoExisteException | NombreNoValidoException | NullPointerException e) {

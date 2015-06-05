@@ -83,6 +83,8 @@ public class BuscarMagos extends VentanaPadre {
 		botonSiguiente.setEnabled(false);
 		botonesPanel.add(botonSiguiente);
 		
+		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
+		
 		// Empezando desde 0 (ya después le daremos a los botones)
 		
 		//mostrar(magos.getPersonajePorPosicion(indice));		
