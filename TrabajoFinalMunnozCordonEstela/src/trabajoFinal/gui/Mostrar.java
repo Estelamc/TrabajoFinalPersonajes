@@ -83,6 +83,8 @@ public class Mostrar extends VentanaPadre {
 		botonesPanel.add(botonAnterior);
 		botonesPanel.add(botonSiguiente);
 		
+		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
+		
 		// Empezando desde 0 (ya después le daremos a los botones)
 		
 		mostrar(General.personajes.getPersonajePorPosicion(indice));		
@@ -143,9 +145,15 @@ public class Mostrar extends VentanaPadre {
 		regionComboBox.setSelectedItem(personaje.getRegion());
 		if(personaje instanceof Dios){
 			diosRB.setSelected(true);
+			razaComboBox.setVisible(false);
+			iconoRaza.setVisible(false);
+			razaEtiqueta.setVisible(false);
 		}
 		else if(personaje instanceof Dragon){
 			dragonRB.setSelected(true);
+			razaComboBox.setVisible(false);
+			iconoRaza.setVisible(false);
+			razaEtiqueta.setVisible(false);
 		}
 		else if(personaje instanceof Mago){
 			magoRB.setSelected(true);

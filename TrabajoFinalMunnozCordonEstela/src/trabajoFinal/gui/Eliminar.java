@@ -25,7 +25,7 @@ public class Eliminar extends VentanaPadre {
 	/**
 	 * Identificador de versi&oacute;n.
 	 */
-	private static final long serialVersionUID = -2667649875092977832L;
+	private static final long serialVersionUID = -8036809159029644984L;
 
 	/**
 	 * Create the dialog.

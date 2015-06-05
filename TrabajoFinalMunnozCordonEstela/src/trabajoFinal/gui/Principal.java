@@ -417,7 +417,7 @@ public class Principal {
 		menuBuscarN.addActionListener(new ActionListener() { // BUSCAR PESONAJE POR NOMBRE
 			public void actionPerformed(ActionEvent e) {
 				if(General.personajes.cantidadPersonajes() != 0){
-					BuscarPorNombre buscar = new BuscarPorNombre();
+					Buscar buscar = new Buscar();
 					buscar.setVisible(true);
 				}
 				else
@@ -538,8 +538,8 @@ public class Principal {
 			
 		menuVerAyuda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // Abre la ventana Ayuda
-				//Ayuda2 ayuda = new Ayuda2();
-				//ayuda.setVisible(true);
+				Ayuda ayuda = new Ayuda();
+				ayuda.setVisible(true);
 			}
 		});
 		

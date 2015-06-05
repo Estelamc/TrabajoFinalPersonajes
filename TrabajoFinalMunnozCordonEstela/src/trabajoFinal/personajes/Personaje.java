@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  *
  */
 
-public class Personaje implements Serializable {
+public class Personaje implements Serializable, Comparable<Personaje> {
 
 	// -------------------------------------- CAMPOS -------------------------------------- \\
 	
@@ -347,7 +347,7 @@ public class Personaje implements Serializable {
 	 * @throws AlturaNoValidaException Error por altura incorrecta.
 	 */
 	protected void setAltura(double altura) throws AlturaNoValidaException {
-		if(altura>1.40 && altura<2.0)
+		if(altura>1.300 && altura<2.0)
 			this.altura = altura;
 		else
 			throw new AlturaNoValidaException("La altura no es válida.");
@@ -434,10 +434,11 @@ public class Personaje implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result 
+				+ ((nombre == null) ? 0 : nombre.hashCode());
 		return result;
 	}
-
+	
 	/**
 	 * Compara si dos personajes tienen el mismo nombre.
 	 * 
@@ -462,4 +463,19 @@ public class Personaje implements Serializable {
 		return true;
 	}
 
+	/**
+	 * Compara dos personajes para 
+	 * ordenarlos por el nombre.
+	 * 
+	 * @param p Personaje a comparar.
+	 * 
+	 * @return 0 si son iguales, -1 si es mayor y 1 si es menor 
+	 * que el personaje con el que comparamos.
+	 */
+	@Override
+	public int compareTo(Personaje p) {
+		// Se puede hacer esto porque String implementa comparable
+		return nombre.compareTo(p.getNombre());
+	// Si quisiéramos ordenar personajes por la edad, por ejemplo, se usaría Comparator
+	}
 }

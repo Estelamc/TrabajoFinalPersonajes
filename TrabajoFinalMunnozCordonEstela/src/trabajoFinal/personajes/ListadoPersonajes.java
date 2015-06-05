@@ -3,6 +3,7 @@ package trabajoFinal.personajes;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 
 /**
  * Gestiona el listado de personajes.
@@ -12,7 +13,7 @@ import java.util.Calendar;
  *
  */
 
-public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
+public class ListadoPersonajes implements Serializable {
 
 	// ----------------------------------- NUESTROS CAMPOS
 	// ----------------------------------- \\
@@ -119,8 +120,6 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 		if (listado.contains(personaje)) // Si ya lo contiene, crea la excepción
 			throw new PersonajeYaExisteException(
 					"El personaje ya existe en el listado");
-		//System.out.println(personaje.getNombre());
-		//System.out.println(personaje.getApellido());
 		// Si no lo contiene
 		return listado.add(personaje);
 
@@ -143,17 +142,9 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 	 * @throws NullPointerException Error por nombre nulo.
 	 */
 	public boolean eliminar(String nombre) throws NombreNoValidoException,
-			PersonajeNoExisteException, NullPointerException {
-		
-		Personaje personaje = new Personaje(nombre); // Crea un personaje con
-		
-		//if (listado.contains(personaje)) 
-			// Si lo contiene, Borra el personaje
-			return listado.remove(personaje); 
-		/*else // Si no lo contiene, crea la excepción
-			throw new PersonajeNoExisteException(
-				"El personaje no existe en el listado");	*/
-				
+			PersonajeNoExisteException, NullPointerException {		
+		Personaje personaje = new Personaje(nombre); // Crea un personaje con el nombre solo
+		return listado.remove(personaje); 				
 	}
 
 	// -------------------- Búsquedas -------------------- \\
@@ -338,19 +329,11 @@ public class ListadoPersonajes implements Serializable, Comparable<Personaje> {
 		return "ListadoPersonajes [listado=" + listado
 				+ ", fechaDeModificacion=" + fechaDeModificacion + "]";
 	}
-
+	
 	/**
-	 * Compara dos personajes.
-	 * 
-	 * @param personaje
-	 *            Personaje a comparar.
-	 * 
-	 * @return 0 si coincide.
+	 * Ordena alfab&eacute;ticamente el listado de personajes.
 	 */
-	@Override
-	public int compareTo(Personaje o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void ordenarAlfabeticamente() {
+		Collections.sort(listado);
 	}
-
 }
