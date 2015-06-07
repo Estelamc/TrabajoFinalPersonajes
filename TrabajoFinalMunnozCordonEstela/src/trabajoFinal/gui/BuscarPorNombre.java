@@ -1,15 +1,13 @@
 package trabajoFinal.gui;
 
 import java.awt.Toolkit;
-
 import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
-
 import trabajoFinal.personajes.Arquero;
 import trabajoFinal.personajes.Dios;
 import trabajoFinal.personajes.Dragon;
@@ -23,11 +21,18 @@ import trabajoFinal.personajes.Raza;
 import trabajoFinal.personajes.Region;
 import trabajoFinal.personajes.Sexo;
 import trabajoFinal.personajes.Zodiaco;
-
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+/**
+ * Busca un personaje por el nombre de entre el listado de personajes.
+ * 
+ * @author Estela Mu&ntilde;oz Cord&oacute;n
+ * @version 1.0
+ *
+ */
 
 public class BuscarPorNombre extends VentanaPadre {
 
@@ -117,7 +122,7 @@ public class BuscarPorNombre extends VentanaPadre {
 			JTextField alturaCampo, JTextField pesoCampo, JPanel panelContenedor, JComboBox<Sexo> sexoComboBox, 
 			JComboBox<Zodiaco> zodiacoComboBox, JComboBox<Region> regionComboBox, JComboBox<Raza> razaComboBox, 
 			JRadioButton magoRB, JRadioButton arqueroRB, JRadioButton guerreroRB, JRadioButton dragonRB, 
-			JRadioButton diosRB, JTextPane descripcionCampo, JLabel iconoRaza, JLabel razaEtiqueta) {
+			JRadioButton diosRB, JEditorPane descripcionCampo, JLabel iconoRaza, JLabel razaEtiqueta) {
 		Personaje personaje = null;
 		// Obtiene un personaje del listado por su nombre y de él obtiene el resto de campos
 		try {

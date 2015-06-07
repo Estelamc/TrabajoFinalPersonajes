@@ -84,11 +84,7 @@ public class BuscarMagos extends VentanaPadre {
 		botonesPanel.add(botonSiguiente);
 		
 		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
-		
-		// Empezando desde 0 (ya después le daremos a los botones)
-		
-		//mostrar(magos.getPersonajePorPosicion(indice));		
-		
+						
 		botonAnterior.addActionListener(new ActionListener() { // Muestra el anterior
 			public void actionPerformed(ActionEvent e) {	
 				recorrerListado(--indice);
@@ -126,12 +122,13 @@ public class BuscarMagos extends VentanaPadre {
 	private void comprobarBotones() {
 		if (magos.getPersonajePorPosicion(indice + 1) == null) // Si ya no se puede avanzar más
 			botonSiguiente.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else if(magos.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
-			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else{
+		else
 			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
+		
+		if(magos.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
+			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
+		else	
 			botonAnterior.setEnabled(true); // Sino, permanece habilitado			
-		}
 	}
 	
 	/**

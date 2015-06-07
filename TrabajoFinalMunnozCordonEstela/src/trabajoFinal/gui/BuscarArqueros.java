@@ -19,8 +19,7 @@ import java.awt.event.ActionEvent;
 
 public class BuscarArqueros extends VentanaPadre {
 
-	// ----------------------------------- NUESTROS CAMPOS
-	// ----------------------------------- \\
+	// ----------------------------------- NUESTROS CAMPOS ----------------------------------- \\
 
 	/**
 	 * Identificador de versi&oacute;n.
@@ -50,8 +49,7 @@ public class BuscarArqueros extends VentanaPadre {
 	 */
 	private ListadoPersonajes arqueros = new ListadoPersonajes();
 
-	// ----------------------------------- NUESTRA APLICACIÓN
-	// ----------------------------------- \\
+	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
 
 	/**
 	 * Crea la ventana de di&acute;logo.
@@ -87,11 +85,7 @@ public class BuscarArqueros extends VentanaPadre {
 		botonesPanel.add(botonSiguiente);
 
 		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
-		
-		// Empezando desde 0 (ya después le daremos a los botones)
-
-		// mostrar(magos.getPersonajePorPosicion(indice));
-
+			
 		botonAnterior.addActionListener(new ActionListener() { // Muestra el
 																// anterior
 					public void actionPerformed(ActionEvent e) {
@@ -135,20 +129,20 @@ public class BuscarArqueros extends VentanaPadre {
 																	// avanzar
 																	// más
 			botonSiguiente.setEnabled(false); // Se inhabilita (no hay más que
+		else
+			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
 												// ver)
-		else if (arqueros.getPersonajePorPosicion(indice - 1) == null) // Si ya
+		
+		if (arqueros.getPersonajePorPosicion(indice - 1) == null) // Si ya
 																		// no se
 																		// puede
 																		// retroceder
 																		// más
-			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que
-												// ver)
-		else {
-			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
+			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que												// ver)
+		else 			
 			botonAnterior.setEnabled(true); // Sino, permanece habilitado
-		}
 	}
-
+	
 	/**
 	 * Muestra el personaje del listado.
 	 * 

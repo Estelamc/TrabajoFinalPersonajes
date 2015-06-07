@@ -24,9 +24,11 @@ import trabajoFinal.personajes.Sexo;
 import trabajoFinal.personajes.Zodiaco;
 import javax.swing.border.EtchedBorder;
 import javax.swing.ImageIcon;
-import javax.swing.JTextPane;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import javax.swing.JEditorPane;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 /**
  * Ventana de di&aacute;logo con la que gestionamos el listado de personajes.
@@ -91,16 +93,20 @@ public class VentanaPadre extends JDialog {
 	 * Campo para escribir el peso del personaje.
 	 */
 	protected JTextField pesoCampo = new JTextField();
-	
-	// --------- Descripción --------- \\
-	/**
-	 * Campo de texto para la descripci&oacute;n del personaje.
-	 */
-	protected JTextPane descripcionCampo = new JTextPane();
 	/**
 	 * Etiqueta para la descripción del personaje.
 	 */
 	protected JLabel descripcionEtiqueta = new JLabel("Descripci\u00F3n");
+	
+	/**
+	 * Panel editable donde poder escribir la descripci&oacute;n del personaje.
+	 */
+	protected final JEditorPane descripcionCampo = new JEditorPane();
+	
+	/**
+	 * Panel de desplazamiento para poder moverse por la descripci&oacute;n del personaje.
+	 */
+	protected final JScrollPane panelDesplazamientoDescripcion = new JScrollPane();
 	
 	// --------- Botones Salir y OK --------- \\
 	/**
@@ -235,7 +241,7 @@ public class VentanaPadre extends JDialog {
 	 * Lista de razas disponibles para elegir.
 	 */
 	protected JComboBox<Raza> razaComboBox = new JComboBox<Raza>();	
-				
+					
 		
 	// ----------------------------------- NUESTRA APLICACIÓN ----------------------------------- \\
 	
@@ -256,6 +262,7 @@ public class VentanaPadre extends JDialog {
 		tipoPanel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Personajes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		tipoPanel.setBounds(23, 57, 129, 152);
 		panelContenedor.add(tipoPanel);
+		
 		iconoM.setBounds(93, 16, 21, 23);
 		tipoPanel.add(iconoM);
 		iconoM.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
@@ -410,19 +417,20 @@ public class VentanaPadre extends JDialog {
 		pesoCampo.setColumns(10);
 		pesoCampo.setBounds(511, 151, 60, 20);
 		panelContenedor.add(pesoCampo);
-		descripcionCampo.setBounds(25, 253, 548, 174);
 		
-		panelContenedor.add(descripcionCampo);
+		// Descripción Etiqueta
 		descripcionEtiqueta.setBounds(23, 228, 149, 14);
-		
 		panelContenedor.add(descripcionEtiqueta);
-		apellidoEtiqueta.setBounds(333, 26, 66, 14);
 		
+		
+		// Apellido Etiqueta y Campo
+		apellidoEtiqueta.setBounds(333, 26, 66, 14);
 		panelContenedor.add(apellidoEtiqueta);
 		apellidoCampo.setColumns(10);
 		apellidoCampo.setBounds(406, 23, 165, 20);
 		panelContenedor.add(apellidoCampo);
 			
+		// Iconos
 		iconoSexo.setIcon(new ImageIcon(VentanaPadre.class.getResource("/trabajoFinal/gui/imagenes/Sex_Male_Female_Circled_Icon_16.png")));
 		iconoSexo.setBounds(221, 56, 21, 23);
 		panelContenedor.add(iconoSexo);
@@ -459,6 +467,12 @@ public class VentanaPadre extends JDialog {
 		iconoPeso.setBounds(433, 151, 21, 23);
 		
 		panelContenedor.add(iconoPeso);
+		panelDesplazamientoDescripcion.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		panelDesplazamientoDescripcion.setBounds(25, 253, 548, 162);
+		
+		// Panel de Desplazamiento
+		panelContenedor.add(panelDesplazamientoDescripcion);
+		panelDesplazamientoDescripcion.setViewportView(descripcionCampo);
 		{
 			// Panel de botones
 			botonesPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));

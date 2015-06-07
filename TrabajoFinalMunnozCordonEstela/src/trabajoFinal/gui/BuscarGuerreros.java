@@ -83,11 +83,7 @@ public class BuscarGuerreros extends VentanaPadre {
 		botonSiguiente.setEnabled(false);
 		botonesPanel.add(botonSiguiente);
 		
-		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
-		
-		// Empezando desde 0 (ya después le daremos a los botones)
-		
-		//mostrar(magos.getPersonajePorPosicion(indice));		
+		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente		
 		
 		botonAnterior.addActionListener(new ActionListener() { // Muestra el anterior
 			public void actionPerformed(ActionEvent e) {	
@@ -126,12 +122,13 @@ public class BuscarGuerreros extends VentanaPadre {
 	private void comprobarBotones() {
 		if (guerreros.getPersonajePorPosicion(indice + 1) == null) // Si ya no se puede avanzar más
 			botonSiguiente.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else if(guerreros.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
-			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else{
+		else
 			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
-			botonAnterior.setEnabled(true); // Sino, permanece habilitado			
-		}
+		
+		if(guerreros.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
+			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
+		else		
+			botonAnterior.setEnabled(true); // Sino, permanece habilitado		
 	}
 	
 	/**
