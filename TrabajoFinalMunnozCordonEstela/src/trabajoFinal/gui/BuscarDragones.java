@@ -73,7 +73,7 @@ public class BuscarDragones extends VentanaPadre {
 		dragonRB.setEnabled(false);
 		guerreroRB.setEnabled(false);
 		arqueroRB.setEnabled(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarDragones.class.getResource("/trabajoFinal/gui/imagenes/Runes_of_Magic_Mage_1_Icon_16.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarDragones.class.getResource("/trabajoFinal/gui/imagenes/Dragon_Age_Origins_new_4_Icon_16.png")));
 		setTitle("Buscar Dragones");
 		setBounds(100, 100, 604, 496);
 		
@@ -83,11 +83,7 @@ public class BuscarDragones extends VentanaPadre {
 		botonesPanel.add(botonSiguiente);
 		
 		General.personajes.ordenarAlfabeticamente(); // Los ordenamos alfabéticamente
-		
-		// Empezando desde 0 (ya después le daremos a los botones)
-		
-		//mostrar(magos.getPersonajePorPosicion(indice));		
-		
+				
 		botonAnterior.addActionListener(new ActionListener() { // Muestra el anterior
 			public void actionPerformed(ActionEvent e) {	
 				recorrerListado(--indice);
@@ -125,12 +121,13 @@ public class BuscarDragones extends VentanaPadre {
 	private void comprobarBotones() {
 		if (dragones.getPersonajePorPosicion(indice + 1) == null) // Si ya no se puede avanzar más
 			botonSiguiente.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else if(dragones.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
-			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else{
+		else
 			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
-			botonAnterior.setEnabled(true); // Sino, permanece habilitado			
-		}
+		
+		if(dragones.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
+			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
+		else			
+			botonAnterior.setEnabled(true); // Sino, permanece habilitado		
 	}
 	
 	/**
