@@ -431,7 +431,7 @@ public class Personaje implements Serializable, Comparable<Personaje> {
 	 * de nombre concreto.
 	 */
 	@Override
-	public int hashCode() {
+	public int hashCode() { // Para el remove
 		final int prime = 31;
 		int result = 1;
 		result = prime * result 
@@ -447,7 +447,7 @@ public class Personaje implements Serializable, Comparable<Personaje> {
 	 * @return True si los personajes coinciden en el nombre o false sino.
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) { // Para el contains
 		if (this == obj)
 			return true;
 		if (obj == null)

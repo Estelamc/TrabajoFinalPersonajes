@@ -133,12 +133,13 @@ public class Mostrar extends VentanaPadre {
 	private void comprobarBotones() {
 		if (General.personajes.getPersonajePorPosicion(indice + 1) == null) // Si ya no se puede avanzar más
 			botonSiguiente.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else if(General.personajes.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
-			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
-		else{
+		else
 			botonSiguiente.setEnabled(true); // Sino, permanece habilitado
+		
+		if(General.personajes.getPersonajePorPosicion(indice - 1) == null) // Si ya no se puede retroceder más
+			botonAnterior.setEnabled(false); // Se inhabilita (no hay más que ver)
+		else			
 			botonAnterior.setEnabled(true); // Sino, permanece habilitado			
-		}
 	}
 	
 	/**

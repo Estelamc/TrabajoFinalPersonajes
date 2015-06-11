@@ -83,9 +83,14 @@ public class Annadir extends VentanaPadre {
 				JOptionPane.INFORMATION_MESSAGE);
 		} catch (ApellidoNoValidoException | PersonajeYaExisteException
 				| NombreNoValidoException | AlturaNoValidaException
-				| PesoNoValidoException | EdadNoValidaException | NullPointerException e) {
+				| PesoNoValidoException | EdadNoValidaException   e) {
 			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-		}		
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(panelContenedor, "Error numérico", "Error", JOptionPane.ERROR_MESSAGE);
+		} catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(panelContenedor, "Valor nulo", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+						
 	}
 	
 	/**

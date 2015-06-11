@@ -83,44 +83,48 @@ public class ListadoPersonajes implements Serializable {
 	 *             Error por edad incorrecta.
 	 * @throws PersonajeYaExisteException
 	 *             Error al existir el personaje.
-	 * @throws NullPointerException Error por dato nulo.             
+	 * @throws NullPointerException
+	 *             Error por dato nulo.
 	 */
 	public boolean annadir(Tipo tipo, String nombre, String apellido,
 			Sexo sexo, Zodiaco zodiaco, int edad, double altura, double peso,
 			Region region, Raza raza, String descripcion)
 			throws ApellidoNoValidoException, NombreNoValidoException,
 			AlturaNoValidaException, PesoNoValidoException,
-			EdadNoValidaException, PersonajeYaExisteException, NullPointerException {
+			EdadNoValidaException, PersonajeYaExisteException,
+			NullPointerException {
 
 		Personaje personaje = null;
 
 		switch (tipo) {
-			case MAGO:
-				personaje = new Mago(nombre, apellido, sexo, zodiaco, edad, altura,
-						peso, region, raza, descripcion);
-				break;
-			case ARQUERO:
-				personaje = new Arquero(nombre, apellido, sexo, zodiaco, edad,
-						altura, peso, region, raza, descripcion);
-				break;
-			case GUERRERO:
-				personaje = new Guerrero(nombre, apellido, sexo, zodiaco, edad,
-						altura, peso, region, raza, descripcion);
-				break;
-			case DRAGÓN:
-				personaje = new Dragon(nombre, apellido, sexo, zodiaco, edad,
-						altura, peso, region, descripcion);
-				break;
-			case DIOS:
-				personaje = new Dios(nombre, apellido, sexo, zodiaco, edad, altura,
-						peso, region, descripcion);
-				break;
+		case MAGO:
+			personaje = new Mago(nombre, apellido, sexo, zodiaco, edad, altura,
+					peso, region, raza, descripcion);
+			break;
+		case ARQUERO:
+			personaje = new Arquero(nombre, apellido, sexo, zodiaco, edad,
+					altura, peso, region, raza, descripcion);
+			break;
+		case GUERRERO:
+			personaje = new Guerrero(nombre, apellido, sexo, zodiaco, edad,
+					altura, peso, region, raza, descripcion);
+			break;
+		case DRAGÓN:
+			System.out.println("Dragoncillo");
+			personaje = new Dragon(nombre, apellido, sexo, zodiaco, edad,
+					altura, peso, region, descripcion);
+			break;
+		case DIOS:
+			personaje = new Dios(nombre, apellido, sexo, zodiaco, edad, altura,
+					peso, region, descripcion);
+			break;
 		}
 
 		if (listado.contains(personaje)) // Si ya lo contiene, crea la excepción
 			throw new PersonajeYaExisteException(
 					"El personaje ya existe en el listado");
 		// Si no lo contiene
+		System.out.println("Dragoncillo antes de add");
 		return listado.add(personaje);
 
 	}
@@ -139,12 +143,23 @@ public class ListadoPersonajes implements Serializable {
 	 *             Error por nombre incorrecto.
 	 * @throws PersonajeNoExisteException
 	 *             Error por no existir el personaje.
-	 * @throws NullPointerException Error por nombre nulo.
+	 * @throws NullPointerException
+	 *             Error por nombre nulo.
 	 */
 	public boolean eliminar(String nombre) throws NombreNoValidoException,
-			PersonajeNoExisteException, NullPointerException {		
-		Personaje personaje = new Personaje(nombre); // Crea un personaje con el nombre solo
-		return listado.remove(personaje); 				
+			PersonajeNoExisteException, NullPointerException {
+		Personaje personaje = new Personaje(nombre); // Crea un personaje con el
+														// nombre solo
+		System.out.println(personaje);
+		if (listado.contains(personaje)){
+			int indice = listado.indexOf(personaje);
+			personaje= listado.get(indice);
+			return listado.remove(personaje);
+		}
+			
+		// Si get devuelve sí o sí o salta una excepción, puedo ahorrarme la
+		// comprobación
+		return false;
 	}
 
 	// -------------------- Búsquedas -------------------- \\
@@ -161,11 +176,13 @@ public class ListadoPersonajes implements Serializable {
 	 *             Error al no existir el personaje.
 	 * @throws NombreNoValidoException
 	 *             Error por nombre incorrecto.
-	 * @throws NullPointerException Error por nombre nulo.
+	 * @throws NullPointerException
+	 *             Error por nombre nulo.
 	 */
 	public Personaje getPersonaje(String nombre)
-			throws PersonajeNoExisteException, NombreNoValidoException, NullPointerException {
-		
+			throws PersonajeNoExisteException, NombreNoValidoException,
+			NullPointerException {
+
 		Personaje personaje = new Personaje(nombre); // Crea un personaje sólo
 														// con el nombre
 		int posicion = listado.indexOf(personaje); // Posición del personaje en
@@ -199,6 +216,15 @@ public class ListadoPersonajes implements Serializable {
 										// devuelve el personaje
 	}
 
+	public ArrayList<Personaje> getTipo(Class<Personaje> clase) {// Mago // CAMBIAR POR ÉSTE TODOS LOS MÉTODOS DE BUSCAR POR TIPO
+		ArrayList<Personaje> tipos = new ArrayList<Personaje>();
+		for (Personaje personaje : listado) {
+			if (personaje.getClass() == clase)// Mago
+				tipos.add(personaje);
+		}
+		return tipos;
+	}
+
 	/**
 	 * Devuelve todos los personajes de tipo Mago.
 	 * 
@@ -208,7 +234,7 @@ public class ListadoPersonajes implements Serializable {
 		// Creamos nuestra lista de magos
 		ArrayList<Personaje> magos = new ArrayList<Personaje>();
 		for (Personaje personaje : listado) {
-			if (personaje instanceof Mago) 
+			if (personaje instanceof Mago)
 				magos.add(personaje);
 		}
 		return magos;
@@ -223,12 +249,12 @@ public class ListadoPersonajes implements Serializable {
 		// Creamos nuestra lista de arqueros
 		ArrayList<Personaje> arqueros = new ArrayList<Personaje>();
 		for (Personaje personaje : listado) {
-			if (personaje instanceof Arquero) 
+			if (personaje instanceof Arquero)
 				arqueros.add(personaje);
 		}
 		return arqueros;
 	}
-	
+
 	/**
 	 * Devuelve todos los personajes de tipo Guerrero.
 	 * 
@@ -238,12 +264,12 @@ public class ListadoPersonajes implements Serializable {
 		// Creamos nuestra lista de guerreros
 		ArrayList<Personaje> guerreros = new ArrayList<Personaje>();
 		for (Personaje personaje : listado) {
-			if (personaje instanceof Guerrero) 
+			if (personaje instanceof Guerrero)
 				guerreros.add(personaje);
 		}
 		return guerreros;
 	}
-	
+
 	/**
 	 * Devuelve todos los personajes de tipo Drag&oacute;n.
 	 * 
@@ -253,12 +279,12 @@ public class ListadoPersonajes implements Serializable {
 		// Creamos nuestra lista de dragones
 		ArrayList<Personaje> dragones = new ArrayList<Personaje>();
 		for (Personaje personaje : listado) {
-			if (personaje instanceof Dragon) 
+			if (personaje instanceof Dragon)
 				dragones.add(personaje);
 		}
 		return dragones;
 	}
-	
+
 	/**
 	 * Devuelve todos los personajes de tipo Dios.
 	 * 
@@ -268,12 +294,11 @@ public class ListadoPersonajes implements Serializable {
 		// Creamos nuestra lista de dioses
 		ArrayList<Personaje> dioses = new ArrayList<Personaje>();
 		for (Personaje personaje : listado) {
-			if (personaje instanceof Dios) 
+			if (personaje instanceof Dios)
 				dioses.add(personaje);
 		}
 		return dioses;
 	}
-	
 
 	// -------------------- Otros -------------------- \\
 
@@ -329,7 +354,7 @@ public class ListadoPersonajes implements Serializable {
 		return "ListadoPersonajes [listado=" + listado
 				+ ", fechaDeModificacion=" + fechaDeModificacion + "]";
 	}
-	
+
 	/**
 	 * Ordena alfab&eacute;ticamente el listado de personajes.
 	 */

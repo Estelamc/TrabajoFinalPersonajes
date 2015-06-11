@@ -47,22 +47,29 @@ public class Eliminar extends VentanaPadre {
 		arqueroRB.setEnabled(false);
 		magoRB.setEnabled(false);
 		apellidoCampo.setEnabled(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Eliminar.class.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
+		setIconImage(Toolkit
+				.getDefaultToolkit()
+				.getImage(
+						Eliminar.class
+								.getResource("/trabajoFinal/gui/imagenes/Math_minus_Icon_16.png")));
 		setTitle("Eliminar");
 		setBounds(100, 100, 604, 496);
-		
+
 		nombreCampo.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
 				nombreCampo.setForeground(java.awt.Color.BLACK);
 			}
-			@Override // El campo del nombre se pone en rojo si está mal al perder el foco
+
+			@Override
+			// El campo del nombre se pone en rojo si está mal al perder el foco
 			public void focusLost(FocusEvent e) {
-				if(!Personaje.esValido(Personaje.getPatronNombre() ,nombreCampo.getText()))
+				if (!Personaje.esValido(Personaje.getPatronNombre(),
+						nombreCampo.getText()))
 					nombreCampo.setForeground(java.awt.Color.RED);
 			}
 		});
-		
+
 		botonOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) { // elimina
 				eliminar();
@@ -75,11 +82,19 @@ public class Eliminar extends VentanaPadre {
 	 */
 	private void eliminar() {
 		try {
-			General.personajes.eliminar(nombreCampo.getText());
-			Gestion.setModificado(true);
-			JOptionPane.showMessageDialog(panelContenedor, "Personaje eliminado con éxito.", "Acción realizada", JOptionPane.INFORMATION_MESSAGE);
+			if (!General.personajes.eliminar(nombreCampo.getText()))
+				JOptionPane.showMessageDialog(panelContenedor,
+						"Personaje NOOOOOOOOOOOO ELIMINADO.", "ELIMINANDO",
+						JOptionPane.INFORMATION_MESSAGE);
+			else {
+				Gestion.setModificado(true);
+				JOptionPane.showMessageDialog(panelContenedor,
+						"Personaje eliminado con éxito.", "Acción realizada",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
 		} catch (NombreNoValidoException | PersonajeNoExisteException e) {
-			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(panelContenedor, e.getMessage(),
+					"Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }
